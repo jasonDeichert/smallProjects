@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-04-30 Tue 14:12 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Introduction to Computing for Psychology Students</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Britt Anderson" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Introduction to Computing for Psychology Students</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org4f6dc3a">1. Content Outline</a>
+<ul>
+<li><a href="#org3c09c80">1.1. Command Line</a>
+<ul>
+<li><a href="#orgb5ba450">1.1.1. What is it?</a></li>
+<li><a href="#org13dabe9">1.1.2. Why use it? One opinion.</a></li>
+<li><a href="#orgfc414fb">1.1.3. Find another</a></li>
+<li><a href="#org1a38c5d">1.1.4. Find your terminal?</a></li>
+<li><a href="#orgc6f1570">1.1.5. Terminal Games</a></li>
+</ul>
+</li>
+<li><a href="#org9e514fd">1.2. <span class="todo TODO">TODO</span> test windows virtual machine and wsl installation</a></li>
+<li><a href="#org61b3a0e">1.3. Installing Software</a>
+<ul>
+<li><a href="#orgc5fc4e4">1.3.1. Emacs - you are going to need this; seriously.</a></li>
+<li><a href="#orgab8a149">1.3.2. R</a></li>
+<li><a href="#orgccbec66">1.3.3. Python</a></li>
+<li><a href="#orgf0d8763">1.3.4. LaTeX</a></li>
+</ul>
+</li>
+<li><a href="#org53f83cb">1.4. Version Control</a>
+<ul>
+<li><a href="#org23de11f">1.4.1. Git</a></li>
+<li><a href="#orge7be99e">1.4.2. Installation of Git</a></li>
+</ul>
+</li>
+<li><a href="#orgcb58b66">1.5. Exercises Emacs/R/Python/Git</a>
+<ul>
+<li><a href="#org02de8fc">1.5.1. Emacs</a></li>
+<li><a href="#org0b98a43">1.5.2. R</a></li>
+<li><a href="#org54686f3">1.5.3. Python</a></li>
+<li><a href="#orgf8e3e13">1.5.4. Git</a></li>
+</ul>
+</li>
+<li><a href="#orgf9b0e3b">1.6. Coding - General</a></li>
+<li><a href="#orgccce746">1.7. Writing Code</a></li>
+<li><a href="#orgb657c34">1.8. Testing Code</a>
+<ul>
+<li><a href="#org781bf72">1.8.1. Interactive</a></li>
+<li><a href="#orgaa57f16">1.8.2. Script</a></li>
+</ul>
+</li>
+<li><a href="#orgb215bd5">1.9. Coding basics</a></li>
+<li><a href="#orgfe08345">1.10. Types</a></li>
+<li><a href="#org770b29b">1.11. Constants and Variables</a></li>
+<li><a href="#org4c6f39c">1.12. Assignment and Equality</a></li>
+<li><a href="#orgdbea683">1.13. Data Types</a></li>
+<li><a href="#orgdac3c40">1.14. Loops</a>
+<ul>
+<li><a href="#org4f986b5">1.14.1. For</a></li>
+<li><a href="#orgb936110">1.14.2. While</a></li>
+</ul>
+</li>
+<li><a href="#org186aa76">1.15. Conditionals</a></li>
+<li><a href="#org8d90181">1.16. Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4f6dc3a" class="outline-2">
+<h2 id="org4f6dc3a"><span class="section-number-2">1</span> Content Outline</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org3c09c80" class="outline-3">
+<h3 id="org3c09c80"><span class="section-number-3">1.1</span> Command Line</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-orgb5ba450" class="outline-4">
+<h4 id="orgb5ba450"><span class="section-number-4">1.1.1</span> What is it?</h4>
+</div>
+<div id="outline-container-org13dabe9" class="outline-4">
+<h4 id="org13dabe9"><span class="section-number-4">1.1.2</span> Why use it? <a href="https://www.quora.com/How-important-is-it-to-learn-command-line-interfaces/answers/1620528">One opinion.</a></h4>
+</div>
+<div id="outline-container-orgfc414fb" class="outline-4">
+<h4 id="orgfc414fb"><span class="section-number-4">1.1.3</span> Find another</h4>
+</div>
+<div id="outline-container-org1a38c5d" class="outline-4">
+<h4 id="org1a38c5d"><span class="section-number-4">1.1.4</span> Find your terminal?</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<p>
+Why is it called the terminal?
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orge0e24ff"></a>Operating Systems<br />
+<div class="outline-text-5" id="text-1-1-4-1">
+<ul class="org-ul">
+<li>Windows
+<ul class="org-ul">
+<li><a href="https://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/">CMD</a></li>
+<li><a href="https://docs.microsoft.com/en-us/powershell/scripting/getting-started/getting-started-with-windows-powershell?view=powershell-6">Power Shell</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WSL</a> 
+If you use this I recommend you install the Ubuntu version. That is
+the one that I know the most about from the options. Note that
+this will give you access to command line tools, but not to
+graphical tools.</li>
+<li><b><b>Recommended</b></b> If you have windows 10 you can run linux as a
+<a href="https://www.windowscentral.com/how-run-linux-distros-windows-10-using-hyper-v">virtual machine</a>.</li>
+</ul></li>
+<li>OSX
+<ul class="org-ul">
+<li>Applications/Utilities/Terminal</li>
+<li>Why don't you have to install a virtual machine to get linux commands on OSX?</li>
+</ul></li>
+<li>Linux 
+Ubuntu recommended; Archlinux is what I use. 
+<ul class="org-ul">
+<li>probably xterm</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgc6f1570" class="outline-4">
+<h4 id="orgc6f1570"><span class="section-number-4">1.1.5</span> Terminal Games</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<ol class="org-ol">
+<li>Find the location of your Desktop folder.</li>
+<li>Change to that directory.</li>
+<li>Find out how much free space you have on your computer disk.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org9e514fd" class="outline-3">
+<h3 id="org9e514fd"><span class="section-number-3">1.2</span> <span class="todo TODO">TODO</span> test windows virtual machine and wsl installation</h3>
+</div>
+<div id="outline-container-org61b3a0e" class="outline-3">
+<h3 id="org61b3a0e"><span class="section-number-3">1.3</span> Installing Software</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-orgc5fc4e4" class="outline-4">
+<h4 id="orgc5fc4e4"><span class="section-number-4">1.3.1</span> Emacs - you are going to need this; seriously.</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li><a href="https://www.gnu.org/software/emacs/download.html">how to install</a></li>
+<li>Windows
+<ul class="org-ul">
+<li><a href="http://ftpmirror.gnu.org/emacs/windows">where to get</a></li>
+</ul></li>
+<li>OSX
+<ul class="org-ul">
+<li>use <a href="https://brew.sh/">homebrew</a></li>
+</ul></li>
+<li>Linux 
+<ul class="org-ul">
+<li>use your package manager</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgab8a149" class="outline-4">
+<h4 id="orgab8a149"><span class="section-number-4">1.3.2</span> R</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+<a href="http://cran.utstat.utoronto.ca/">Download R site</a> Instructions for all operating systems
+</p>
+</div>
+</div>
+<div id="outline-container-orgccbec66" class="outline-4">
+<h4 id="orgccbec66"><span class="section-number-4">1.3.3</span> Python</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+<a href="https://www.python.org/downloads/">Python 3 Download All OSs</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgf0d8763" class="outline-4">
+<h4 id="orgf0d8763"><span class="section-number-4">1.3.4</span> LaTeX</h4>
+<div class="outline-text-4" id="text-1-3-4">
+<p>
+<a href="https://www.latex-project.org/get/">Latex download page</a>
+</p>
+
+<p>
+Recommend Miktex for Windows users not using a linux virtual machine
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org53f83cb" class="outline-3">
+<h3 id="org53f83cb"><span class="section-number-3">1.4</span> Version Control</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-org23de11f" class="outline-4">
+<h4 id="org23de11f"><span class="section-number-4">1.4.1</span> Git</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+<b><b>Not</b></b> the same as Github, though that is one of the more common <i>social</i> uses of git for sharing and collaborating on code. 
+</p>
+</div>
+</div>
+<div id="outline-container-orge7be99e" class="outline-4">
+<h4 id="orge7be99e"><span class="section-number-4">1.4.2</span> Installation of Git</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<ul class="org-ul">
+<li>seriously recommend <a href="https://gitforwindows.org/">Windows users</a> use it through the command line (BASH).</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcb58b66" class="outline-3">
+<h3 id="orgcb58b66"><span class="section-number-3">1.5</span> Exercises Emacs/R/Python/Git</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+<div id="outline-container-org02de8fc" class="outline-4">
+<h4 id="org02de8fc"><span class="section-number-4">1.5.1</span> Emacs</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<ol class="org-ol">
+<li>Tutorial Ctrl-h t (aka C-h t)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org0b98a43" class="outline-4">
+<h4 id="org0b98a43"><span class="section-number-4">1.5.2</span> R</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<ol class="org-ol">
+<li>Test for R from a terminal.
+<ul class="org-ul">
+<li>open terminal</li>
+<li>type <code>r</code> then <code>enter</code></li>
+<li>type <code>2 + 2 enter</code></li>
+<li>Do you see 4?</li>
+<li>type <code>quit()</code> to exit.</li>
+</ul></li>
+<li>Test for R in Emacs
+<ul class="org-ul">
+<li><code>M-x R</code></li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org54686f3" class="outline-4">
+<h4 id="org54686f3"><span class="section-number-4">1.5.3</span> Python</h4>
+<div class="outline-text-4" id="text-1-5-3">
+<ol class="org-ol">
+<li>Test for Python in a terminal.
+<ul class="org-ul">
+<li>open a terminal</li>
+<li>type <code>python</code> then <code>enter</code></li>
+<li>type <code>2 + 2 enter</code></li>
+<li>Do you see 4?</li>
+<li>type <code>quit()</code> to exit.</li>
+<li>Why do you need to have the parentheses after the word quit?</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf8e3e13" class="outline-4">
+<h4 id="orgf8e3e13"><span class="section-number-4">1.5.4</span> Git</h4>
+<div class="outline-text-4" id="text-1-5-4">
+<ol class="org-ol">
+<li>Open a terminal</li>
+<li>Move (<code>cd</code> or <code>dir</code>) into your Desktop</li>
+<li>type <code>git init myrepo</code></li>
+<li>Should see message from the terminal prompt that it has been created.</li>
+<li>Feel free to delete (e.g. <code>rm -rf ./myrepo</code>)</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf9b0e3b" class="outline-3">
+<h3 id="orgf9b0e3b"><span class="section-number-3">1.6</span> Coding - General</h3>
+</div>
+<div id="outline-container-orgccce746" class="outline-3">
+<h3 id="orgccce746"><span class="section-number-3">1.7</span> Writing Code</h3>
+</div>
+<div id="outline-container-orgb657c34" class="outline-3">
+<h3 id="orgb657c34"><span class="section-number-3">1.8</span> Testing Code</h3>
+<div class="outline-text-3" id="text-1-8">
+</div>
+<div id="outline-container-org781bf72" class="outline-4">
+<h4 id="org781bf72"><span class="section-number-4">1.8.1</span> Interactive</h4>
+</div>
+<div id="outline-container-orgaa57f16" class="outline-4">
+<h4 id="orgaa57f16"><span class="section-number-4">1.8.2</span> Script</h4>
+</div>
+</div>
+<div id="outline-container-orgb215bd5" class="outline-3">
+<h3 id="orgb215bd5"><span class="section-number-3">1.9</span> Coding basics</h3>
+</div>
+<div id="outline-container-orgfe08345" class="outline-3">
+<h3 id="orgfe08345"><span class="section-number-3">1.10</span> Types</h3>
+<div class="outline-text-3" id="text-1-10">
+<ul class="org-ul">
+<li>Integers</li>
+<li>Doubles/Floats</li>
+<li>Booleans</li>
+<li>Lists and Tuples</li>
+<li>Dictionaries</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org770b29b" class="outline-3">
+<h3 id="org770b29b"><span class="section-number-3">1.11</span> Constants and Variables</h3>
+</div>
+<div id="outline-container-org4c6f39c" class="outline-3">
+<h3 id="org4c6f39c"><span class="section-number-3">1.12</span> Assignment and Equality</h3>
+<div class="outline-text-3" id="text-1-12">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a0522d;">a</span> = 2
+<span style="color: #a020f0;">print</span>(a == 3)
+</pre>
+</div>
+
+<pre class="example">
+False
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgdbea683" class="outline-3">
+<h3 id="orgdbea683"><span class="section-number-3">1.13</span> Data Types</h3>
+</div>
+<div id="outline-container-orgdac3c40" class="outline-3">
+<h3 id="orgdac3c40"><span class="section-number-3">1.14</span> Loops</h3>
+<div class="outline-text-3" id="text-1-14">
+</div>
+<div id="outline-container-org4f986b5" class="outline-4">
+<h4 id="org4f986b5"><span class="section-number-4">1.14.1</span> For</h4>
+</div>
+<div id="outline-container-orgb936110" class="outline-4">
+<h4 id="orgb936110"><span class="section-number-4">1.14.2</span> While</h4>
+</div>
+</div>
+<div id="outline-container-org186aa76" class="outline-3">
+<h3 id="org186aa76"><span class="section-number-3">1.15</span> Conditionals</h3>
+</div>
+<div id="outline-container-org8d90181" class="outline-3">
+<h3 id="org8d90181"><span class="section-number-3">1.16</span> Functions</h3>
+<div class="outline-text-3" id="text-1-16">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a020f0;">def</span> <span style="color: #0000ff;">myadd</span>(x,y):
+   <span style="color: #a020f0;">return</span>(x+y)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python">myadd(2,3)
+</pre>
+</div>
+
+<pre class="example">
+5
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2019-04-30 Tue 00:00</p>
+<p class="author">Author: Britt Anderson</p>
+<p class="date">Created: 2019-04-30 Tue 14:12</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

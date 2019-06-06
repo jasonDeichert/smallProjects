@@ -1,0 +1,286 @@
+% Created 2019-04-30 Tue 14:33
+% Intended LaTeX compiler: pdflatex
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{times}
+\author{Britt Anderson}
+\date{\textit{<2019-04-30 Tue>}}
+\title{Introduction to Computing for Psychology Students}
+\hypersetup{
+ pdfauthor={Britt Anderson},
+ pdftitle={Introduction to Computing for Psychology Students},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.2 (Org mode 9.2.3)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Content Outline}
+\label{sec:orge1f8bc4}
+\subsection{Machine Basics}
+\label{sec:orgf199d5d}
+\subsubsection{Command Line}
+\label{sec:org6c542eb}
+\begin{enumerate}
+\item What is it?
+\label{sec:orgd1759e7}
+\item Why use it? \href{https://www.quora.com/How-important-is-it-to-learn-command-line-interfaces/answers/1620528}{One opinion.}
+\label{sec:org84d063c}
+\item Find another
+\label{sec:org149e411}
+\item Find your terminal?
+\label{sec:org116214b}
+Why is it called the terminal?
+\begin{enumerate}
+\item Operating Systems
+\label{sec:org45b185a}
+\begin{itemize}
+\item Windows
+\begin{itemize}
+\item \href{https://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/}{CMD}
+\item \href{https://docs.microsoft.com/en-us/powershell/scripting/getting-started/getting-started-with-windows-powershell?view=powershell-6}{Power Shell}
+\item \href{https://docs.microsoft.com/en-us/windows/wsl/install-win10}{WSL} 
+If you use this I recommend you install the Ubuntu version. That is
+the one that I know the most about from the options. Note that
+this will give you access to command line tools, but not to
+graphical tools.
+\item \textbf{\textbf{Recommended}} If you have windows 10 you can run linux as a
+\href{https://www.windowscentral.com/how-run-linux-distros-windows-10-using-hyper-v}{virtual machine}.
+\end{itemize}
+\item OSX
+\begin{itemize}
+\item Applications/Utilities/Terminal
+\item Why don't you have to install a virtual machine to get linux commands on OSX?
+\end{itemize}
+\item Linux 
+Ubuntu recommended; Archlinux is what I use. 
+\begin{itemize}
+\item probably xterm
+\end{itemize}
+\end{itemize}
+\end{enumerate}
+\item Terminal Games
+\label{sec:orga0146dc}
+\begin{enumerate}
+\item Find the location of your Desktop folder.
+\item Change to that directory.
+\item Find out how much free space you have on your computer disk.
+\end{enumerate}
+\end{enumerate}
+\subsubsection{{\bfseries\sffamily TODO} test windows virtual machine and wsl installation}
+\label{sec:orgeecb45a}
+\subsubsection{Installing Software}
+\label{sec:orga14ff86}
+\begin{enumerate}
+\item Emacs - you are going to need this; seriously.
+\label{sec:org7236ab4}
+\begin{itemize}
+\item \href{https://www.gnu.org/software/emacs/download.html}{how to install}
+\item Windows
+\begin{itemize}
+\item \href{http://ftpmirror.gnu.org/emacs/windows}{where to get}
+\end{itemize}
+\item OSX
+\begin{itemize}
+\item use \href{https://brew.sh/}{homebrew}
+\end{itemize}
+\item Linux 
+\begin{itemize}
+\item use your package manager
+\end{itemize}
+\end{itemize}
+\item R
+\label{sec:org28506ae}
+\href{http://cran.utstat.utoronto.ca/}{Download R site} Instructions for all operating systems
+\item Python
+\label{sec:org846d0ce}
+\href{https://www.python.org/downloads/}{Python 3 Download All OSs}
+\item \LaTeX{}
+\label{sec:org079bbe7}
+\href{https://www.latex-project.org/get/}{Latex download page}
+
+Recommend Miktex for Windows users not using a linux virtual machine
+\end{enumerate}
+\subsubsection{Version Control}
+\label{sec:org2028ea6}
+\begin{enumerate}
+\item Git
+\label{sec:orgcbd73a7}
+\textbf{\textbf{Not}} the same as Github, though that is one of the more common \emph{social} uses of git for sharing and collaborating on code. 
+\item Installation of Git
+\label{sec:org2108366}
+\begin{itemize}
+\item seriously recommend \href{https://gitforwindows.org/}{Windows users} use it through the command line (BASH).
+\end{itemize}
+\end{enumerate}
+\subsubsection{Exercises Emacs/R/Python/Git}
+\label{sec:org9da99a3}
+\begin{enumerate}
+\item Emacs
+\label{sec:org8c307f6}
+\begin{enumerate}
+\item Tutorial Ctrl-h t (aka C-h t)
+\end{enumerate}
+\item R
+\label{sec:org1cc09dd}
+\begin{enumerate}
+\item Test for R from a terminal.
+\begin{itemize}
+\item open terminal
+\item type \texttt{r} then \texttt{enter}
+\item type \texttt{2 + 2 enter}
+\item Do you see 4?
+\item type \texttt{quit()} to exit.
+\end{itemize}
+\item Test for R in Emacs
+\begin{itemize}
+\item \texttt{M-x R}
+\end{itemize}
+\end{enumerate}
+\item Python
+\label{sec:orgbcc6318}
+\begin{enumerate}
+\item Test for Python in a terminal.
+\begin{itemize}
+\item open a terminal
+\item type \texttt{python} then \texttt{enter}
+\item type \texttt{2 + 2 enter}
+\item Do you see 4?
+\item type \texttt{quit()} to exit.
+\item Why do you need to have the parentheses after the word quit?
+\end{itemize}
+\end{enumerate}
+\begin{enumerate}
+\item Git
+\label{sec:org517dbc8}
+\begin{enumerate}
+\item Open a terminal
+\item Move (\texttt{cd} or \texttt{dir}) into your Desktop
+\item type \texttt{git init myrepo}
+\item Should see message from the terminal prompt that it has been created.
+\item Feel free to delete (e.g. \texttt{rm -rf ./myrepo})
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\subsection{Coding Basics}
+\label{sec:orgdc1e6cd}
+\subsubsection{Coding - General}
+\label{sec:orgce59498}
+\subsubsection{Writing Code}
+\label{sec:org9ef234f}
+\subsubsection{Testing Code}
+\label{sec:org86cea51}
+\begin{enumerate}
+\item Interactive
+\label{sec:org220085e}
+\item Script
+\label{sec:orga233ad6}
+\end{enumerate}
+\subsubsection{Coding basics}
+\label{sec:org507779c}
+\subsubsection{Types}
+\label{sec:orge406378}
+\begin{itemize}
+\item Integers
+\item Doubles/Floats
+\item Booleans
+\item Lists and Tuples
+\item Dictionaries
+\end{itemize}
+\subsubsection{Constants and Variables}
+\label{sec:orgae493da}
+\subsubsection{Assignment and Equality}
+\label{sec:org6646e58}
+\begin{verbatim}
+a = 2
+print(a == 3)
+\end{verbatim}
+
+\begin{verbatim}
+False
+\end{verbatim}
+
+\subsubsection{Data Types}
+\label{sec:orgf3b65fa}
+\subsubsection{Loops}
+\label{sec:orgf630c6b}
+\begin{enumerate}
+\item For
+\label{sec:org1d13c89}
+\item While
+\label{sec:org12fde45}
+\end{enumerate}
+\subsubsection{Conditionals}
+\label{sec:orgf1da076}
+\subsubsection{Functions}
+\label{sec:orgc2bc608}
+\begin{verbatim}
+def myadd(x,y):
+   return(x+y)
+\end{verbatim}
+
+\begin{verbatim}
+myadd(2,3)
+\end{verbatim}
+
+\begin{verbatim}
+5
+\end{verbatim}
+\subsubsection{Interpretation and Interactivity}
+\label{sec:org6f98149}
+\subsubsection{Scripts}
+\label{sec:org8905ebb}
+\subsubsection{Libraries}
+\label{sec:org2619bd6}
+\subsubsection{Programs}
+\label{sec:org9ebdeec}
+\subsubsection{Debugging and Basic Working Methods}
+\label{sec:orgac987c1}
+\subsubsection{IDEs}
+\label{sec:orgb98c934}
+\subsection{File Handling}
+\label{sec:org68e22fb}
+\subsection{Pip to Install Libraries and Virtual Environments}
+\label{sec:orgfc261a2}
+\subsection{R Coding Basics - compare}
+\label{sec:org7b960dd}
+\subsection{Writing a simple report}
+\label{sec:org3cb7d17}
+\subsection{Mixing Code and Text for reproducibility}
+\label{sec:orgfb9eed3}
+\subsection{Data handling in R}
+\label{sec:org295817b}
+\subsection{Data handling in Python}
+\label{sec:orga1f2844}
+\subsection{Plotting in R}
+\label{sec:org3ac19d4}
+\subsubsection{Interaction Plots}
+\label{sec:orge3c6a6d}
+\subsection{Experimental Programming in Python}
+\label{sec:orgf7cd9fd}
+\subsubsection{Psychopy Library}
+\label{sec:org7ef4ed8}
+\subsection{Final Projects}
+\label{sec:org861436e}
+\begin{enumerate}
+\item Program a simple, even trivial, but functional program for a very simple psychological task that collects RT data from keyboard presses (e.g. a Stroop Task or a Posner Cuing Task).
+\item Collect data on classmates
+\item Use R to read in the data and generate some simple computations, e.g. the mean RT and a plot of something (e.g. conflict and no conflict conditions of the stroop subdivided by gender, glasses, haircolor). Try a boxplot or a scatter plot depending on the type of data you collected.
+\item Write a simple *.org file that includes the text and analysis and generates a simple report with at least one citation. This file should be complete. That is it should read in the data, perform the analyses, and directly format and insert the data and plots into the final document. The experimental code should be included as an appendix.
+\end{enumerate}
+\end{document}

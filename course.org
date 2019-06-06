@@ -1,0 +1,174 @@
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Introduction to Computing for Psychology Students
+#+date: <2019-04-30 Tue>
+#+author: Britt Anderson
+#+email: britt@uwaterloo.ca
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 26.2 (Org mode 9.2.3)
+#+latex_class: article
+#+latex_class_options:
+#+latex_header: \usepackage{times}
+#+latex_header_extra:
+#+description:
+#+keywords:
+#+subtitle:
+#+latex_compiler: pdflatex
+* My Todos
+  1. Install Ubuntu as an additional linux distribution on the Lenovo and use for teaching this course. Allow me to enforce a single standard Ubuntu?
+* Content Outline
+** Machine Basics
+*** Command Line
+**** What is it?
+**** Why use it? [[https://www.quora.com/How-important-is-it-to-learn-command-line-interfaces/answers/1620528][One opinion.]]
+***** The [[http://write.flossmanuals.net/command-line/introduction/][Manual]]
+**** Find another
+**** Find your terminal?
+     Why is it called the terminal?
+***** Operating Systems
+      - Windows
+        - [[https://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/][CMD]]
+        - [[https://docs.microsoft.com/en-us/powershell/scripting/getting-started/getting-started-with-windows-powershell?view=powershell-6][Power Shell]]
+        - [[https://docs.microsoft.com/en-us/windows/wsl/install-win10][WSL]] 
+          If you use this I recommend you install the Ubuntu version. That is
+          the one that I know the most about from the options. Note that
+          this will give you access to command line tools, but not to
+          graphical tools.
+        - **Recommended** If you have windows 10 you can run linux as a
+          [[https://www.windowscentral.com/how-run-linux-distros-windows-10-using-hyper-v][virtual machine]].
+      - OSX
+        - Applications/Utilities/Terminal
+        - Why don't you have to install a virtual machine to get linux commands on OSX?
+      - Linux 
+        Ubuntu recommended; Archlinux is what I use. 
+        - probably xterm
+        - Running your own linux for this course [[https://www.howtogeek.com/howto/14912/create-a-persistent-bootable-ubuntu-usb-flash-drive/][from a pen drive]] (usb drive).
+          - a useful [[https://www.linuxquestions.org/questions/linux-general-1/clone-bootable-usb-stick-686964/#post3358388][link]] to a method for copying exactly one usb to
+            another (in case I need to make multiple copies of this
+            bootable cd). If I had one working version I could have the students bring in a 32 GB (or larger USB) to make their own copy. 
+**** Terminal Games
+     1. Find the location of your Desktop folder.
+     2. Change to that directory.
+     3. Find out how much free space you have on your computer disk.
+*** TODO test windows virtual machine and wsl installation
+*** Installing Software
+**** Emacs - you are going to need this; seriously.
+     - [[https://www.gnu.org/software/emacs/download.html][how to install]]
+     1. Windows
+        - [[http://ftpmirror.gnu.org/emacs/windows][where to get]]
+     2. OSX
+        - use [[https://brew.sh/][homebrew]]
+     3. Linux 
+        - use your package manager
+***** Why Emacs?
+      I want to prevent you from finding the old, familiar, but
+      hopefully inefficient methods of doing things. I want to coerce you into learning to use the keyboard as a basis for entering commands, and further EMACS will allow us to have a common IDE for multiple languages, and even to mix them in a single file, and to export them into a nice format (like pdf and webpages).
+**** R
+     [[http://cran.utstat.utoronto.ca/][Download R site]] Instructions for all operating systems
+**** Python
+     [[https://www.python.org/downloads/][Python 3 Download All OSs]]
+**** LaTeX
+     [[https://www.latex-project.org/get/][Latex download page]]
+     Recommend Miktex for Windows users not using a linux virtual machine
+*** Version Control
+**** Git
+     **Not** the same as Github, though that is one of the more common /social/ uses of git for sharing and collaborating on code. 
+**** Installation of Git
+     - seriously recommend [[https://gitforwindows.org/][Windows users]] use it through the command line (BASH). 
+*** Exercises Emacs/R/Python/Git
+**** Emacs
+     1. Tutorial Ctrl-h t (aka C-h t)
+**** R
+     1. Test for R from a terminal.
+        - open terminal
+        - type ~r~ then ~enter~
+        - type ~2 + 2 enter~
+        - Do you see 4?
+        - type ~quit()~ to exit.
+     2. Test for R in Emacs
+        - ~M-x R~
+**** Python
+     1. Test for Python in a terminal.
+        - open a terminal
+        - type ~python~ then ~enter~
+        - type ~2 + 2 enter~
+        - Do you see 4?
+        - type ~quit()~ to exit.
+        - Why do you need to have the parentheses after the word quit?
+****** Git
+       1. Open a terminal
+       2. Move (~cd~ or ~dir~) into your Desktop
+       3. type =git init myrepo=
+       4. Should see message from the terminal prompt that it has been created.
+       5. Feel free to delete (e.g. =rm -rf ./myrepo=)
+** Coding Basics
+*** Coding - General
+*** Writing Code
+*** Testing Code
+**** Interactive
+**** Script
+*** Coding basics
+*** Types
+    - Integers
+    - Doubles/Floats
+    - Booleans
+    - Lists and Tuples
+    - Dictionaries
+*** Constants and Variables
+*** Assignment and Equality
+ #+begin_src python :results output :exports both
+ a = 2
+ print(a == 3)
+ #+end_src
+
+ #+RESULTS:
+ : False
+
+*** Data Types
+*** Loops
+**** For 
+**** While
+*** Conditionals
+*** Functions
+ #+begin_src python :exports code  :session *pythonPractice*
+ def myadd(x,y):
+    return(x+y)
+ #+end_src
+
+ #+RESULTS:
+
+ #+begin_src python :exports both :results output :session *pythonPractice*
+ myadd(2,3)
+ #+end_src
+
+ #+RESULTS:
+ : 5
+*** Interpretation and Interactivity
+*** Scripts
+*** Libraries
+*** Programs
+*** Debugging and Basic Working Methods
+*** IDEs
+** File Handling
+** Pip to Install Libraries and Virtual Environments
+** R Coding Basics - compare
+** Writing a simple report
+** Mixing Code and Text for reproducibility
+** Data handling in R
+** Data handling in Python
+** Plotting in R
+*** Interaction Plots
+** Experimental Programming in Python
+*** Psychopy Library
+** Final Projects
+   1. Program a simple, even trivial, but functional program for a very simple psychological task that collects RT data from keyboard presses (e.g. a Stroop Task or a Posner Cuing Task).
+   2. Collect data on classmates
+   3. Use R to read in the data and generate some simple computations, e.g. the mean RT and a plot of something (e.g. conflict and no conflict conditions of the stroop subdivided by gender, glasses, haircolor). Try a boxplot or a scatter plot depending on the type of data you collected.
+   4. Write a simple *.org file that includes the text and analysis and generates a simple report with at least one citation. This file should be complete. That is it should read in the data, perform the analyses, and directly format and insert the data and plots into the final document. The experimental code should be included as an appendix. 
+
+
