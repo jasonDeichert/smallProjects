@@ -19,10 +19,77 @@
 #+keywords:
 #+subtitle:
 #+latex_compiler: pdflatex
-* My Todos
-  1. Install Ubuntu as an additional linux distribution on the Lenovo and use for teaching this course. Allow me to enforce a single standard Ubuntu?
-* Content Outline
-** Machine Basics
+* Course Goal:
+  Improve your ability to use your computer as a tool for academic activities.
+
+  This leads to the following learning objectives
+* Learning Objectives:
+    - Learn how to install software.
+    - Learn how to work from the command line.
+    - Learn the rudiments of programming sufficient to allow further progress through self study.
+    - Learn about the use of libraries to enable programming psychological experiments.
+    - Learn how to use version control
+    - Learn how to write papers that blend code and analyses to generate reproducible research reports.      
+      This includes learning
+      - how to use citation databases
+      - generate graphics of analyses
+      - conduct statistical analyses
+      - generate multiple output formats from a single source file. 
+* Course Mechanics
+  To meet the learning objectives you will need to *do* more than you listen or observe. You will also need to break old habits. That means in the beginning it will be harder to do simple things. It also means that in the future things that used to be impossible for you to do will now be possible (but they may still not be easy). Combining computer skills with with your psychology content knowledge makes you more attractive to employers and on a graduate school application. 
+
+  Thus, this course will require you to use the Linux operating system (the XUbuntu flavor) and tools available within that space. Later on, after this course, if you wish to return to the world of OSX and Windows10 you will know what you are looking for, and you will have the skills necessary to make it available. 
+
+* Outline
+** Session 1 Linux
+   1. Learn how to boot your computer from a USB. 
+   2. Run an XUbuntu Live CD
+   3. Install Linux XUbuntu to a second USB
+   4. Boot your computer from the /new/ USB and install *emacs* /from the command line./
+      1. The command line - open up a "terminal". Your terminal will be running a "shell."
+      2. Package Managers
+         1. The ubuntu package manager
+            Basic commands: 
+            - apt update
+            - apt install 
+            - apt search
+            - apt remove
+         2. A basic demonstration
+            #+Begin_src sh :eval never :export code
+            sudo apt update
+            sudo apt search emacs
+            sudo apt install emacs
+            emacs &
+            #+end_src
+            
+*** Troubleshooting
+    - I don't have a USB port? :: Do you have an sdcard port? Yes? You can use that. If you have neither you will need a different computer. It can be a cheap (as in the price of textbook cheap) and old one.
+    - I only have one USB port. :: Can you work with a neighbor to repeat the installation instructions on a second USB that you can use on your machine? If not, you may need something like this. 
+         #+Caption: USB Port Expander
+       #+Name: USBPortExpndPic
+       #+ATTR_HTML: :width 50%
+       [[https://images-na.ssl-images-amazon.com/images/I/81j1TYALbYL._SL1500_.jpg]]
+    - Can I just install Linux on my computer? :: You certainly can, and you can even keep you "old" operating system and use one or the other as you choose. But this seemed more than I could require of all students, but I encourage you to do it if you are willing. First, **back up everything** because trying this and getting it wrong could cause you to lose all your saved information. 
+    - I already use Linux. :: Good for you. Help a classmate.
+    - What is Linux? :: Check wikipedia.
+    - Why use Xubuntu? :: Is it different from Ubuntu (Debian, Arch, Fedora, OpenSuse...)? Linux is a kernel that powers the system. All the rest are different choices people make of the tools they want to wrap around that "engine." XUbuntu is a reasonably light-weight linux distribution that runs well on slow machines, and yet has enough of a user base to make it reasonably easy to find help on line.
+*** Homework
+    1. Send me a screenshot of emacs open and running on your laptop.
+       Hints: look for xfce4-screenshooter to take the screenshot. Log on to learn while running linux. Of course that will require you to figure out how to connect to the internet.
+    2. Look at the available software applications and download one (1). Don't go crazy on this. You are running your whole computer from a small usb. Just find one that strikes you as cool or interesting and install it, play with it, and write a one-paragraph description of it using this format:
+       
+       #+Attr_HTML: :textarea t :width 40
+       #+Begin_example
+       * Package Name
+         My Package
+       ** Short Description
+          A package for something.
+       ** Review
+          I liked it because ... and so on.
+       #+END_Example
+
+       Save it with yourlastname-firstname_pkgname.org as the file name. Upload it to the dropbox on learn. And save it, because you will need it again soon. 
+** Session 2 Command Line Basics and EMACS Introduction
 *** Command Line
 **** What is it?
 **** Why use it? [[https://www.quora.com/How-important-is-it-to-learn-command-line-interfaces/answers/1620528][One opinion.]]
@@ -45,68 +112,48 @@
         - Applications/Utilities/Terminal
         - Why don't you have to install a virtual machine to get linux commands on OSX?
       - Linux 
-        Ubuntu recommended; Archlinux is what I use. 
         - probably xterm
-        - Running your own linux for this course [[https://www.howtogeek.com/howto/14912/create-a-persistent-bootable-ubuntu-usb-flash-drive/][from a pen drive]] (usb drive).
-          - a useful [[https://www.linuxquestions.org/questions/linux-general-1/clone-bootable-usb-stick-686964/#post3358388][link]] to a method for copying exactly one usb to
-            another (in case I need to make multiple copies of this
-            bootable cd). If I had one working version I could have the students bring in a 32 GB (or larger USB) to make their own copy. 
 **** Terminal Games
      1. Find the location of your Desktop folder.
      2. Change to that directory.
      3. Find out how much free space you have on your computer disk.
-*** TODO test windows virtual machine and wsl installation
-*** Installing Software
-**** Emacs - you are going to need this; seriously.
-     - [[https://www.gnu.org/software/emacs/download.html][how to install]]
-     1. Windows
-        - [[http://ftpmirror.gnu.org/emacs/windows][where to get]]
-     2. OSX
-        - use [[https://brew.sh/][homebrew]]
-     3. Linux 
-        - use your package manager
-***** Why Emacs?
-      I want to prevent you from finding the old, familiar, but
-      hopefully inefficient methods of doing things. I want to coerce you into learning to use the keyboard as a basis for entering commands, and further EMACS will allow us to have a common IDE for multiple languages, and even to mix them in a single file, and to export them into a nice format (like pdf and webpages).
-**** R
-     [[http://cran.utstat.utoronto.ca/][Download R site]] Instructions for all operating systems
-**** Python
-     [[https://www.python.org/downloads/][Python 3 Download All OSs]]
-**** LaTeX
-     [[https://www.latex-project.org/get/][Latex download page]]
-     Recommend Miktex for Windows users not using a linux virtual machine
+*** Exercises Emacs
+**** Emacs
+     1. Tutorial ~Ctrl-h t~ (aka =C-h t=)
+     2. Find the Psychotherapist - you may need it.
+     3. Play a game - try ~M-x tetris~
+     4. Init files and packages. 
+        Emacs has it's own package system that allows you to greatly expand its functionality. Most of those customization are set up in your =~/.emacs.d/init.el= file. Create it if it doesn't exist. 
+        You can learn more by reading the [[info:emacs#Init%20File][info file]].
+     5. [[info:org#Top][Orgmode]]
+        1. Create an outline.
+        2. Create a link
+        3. Insert an image
+        4. Export as a web page. 
+** Session 3 Version Control Github
 *** Version Control
 **** Git
      **Not** the same as Github, though that is one of the more common /social/ uses of git for sharing and collaborating on code. 
 **** Installation of Git
      - seriously recommend [[https://gitforwindows.org/][Windows users]] use it through the command line (BASH). 
-*** Exercises Emacs/R/Python/Git
-**** Emacs
-     1. Tutorial Ctrl-h t (aka C-h t)
-**** R
-     1. Test for R from a terminal.
-        - open terminal
-        - type ~r~ then ~enter~
-        - type ~2 + 2 enter~
-        - Do you see 4?
-        - type ~quit()~ to exit.
-     2. Test for R in Emacs
-        - ~M-x R~
-**** Python
-     1. Test for Python in a terminal.
-        - open a terminal
-        - type ~python~ then ~enter~
-        - type ~2 + 2 enter~
-        - Do you see 4?
-        - type ~quit()~ to exit.
-        - Why do you need to have the parentheses after the word quit?
-****** Git
-       1. Open a terminal
-       2. Move (~cd~ or ~dir~) into your Desktop
-       3. type =git init myrepo=
-       4. Should see message from the terminal prompt that it has been created.
-       5. Feel free to delete (e.g. =rm -rf ./myrepo=)
-** Coding Basics
+**** Git
+     1. Open a terminal
+     2. Move (~cd~ or ~dir~) into your Desktop
+     3. type =git init myrepo=
+     4. Should see message from the terminal prompt that it has been created.
+     5. Feel free to delete (e.g. =rm -rf ./myrepo=)
+**** Magit
+**** Forks and Clones and Pull Requests
+** Session 4 Python 
+*** Python
+    1. Test for Python in a terminal.
+       - open a terminal
+       - type ~python --version~ then ~enter~
+       - If you see an answer you have python. Type ~python~. Note the cursor has changed.
+       - type ~2 + 2 enter~
+       - Do you see 4?
+       - type ~quit()~ to exit.
+       - Why do you need to have the parentheses after the word quit?
 *** Coding - General
 *** Writing Code
 *** Testing Code
@@ -154,21 +201,45 @@
 *** Programs
 *** Debugging and Basic Working Methods
 *** IDEs
-** File Handling
-** Pip to Install Libraries and Virtual Environments
-** R Coding Basics - compare
-** Writing a simple report
-** Mixing Code and Text for reproducibility
-** Data handling in R
-** Data handling in Python
-** Plotting in R
+*** Pip to Install Libraries and Virtual Environments
+** Session 5 R
+*** R
+    1. Test for R from a terminal.
+       - open terminal
+       - type ~r~ then ~enter~
+       - type ~2 + 2 enter~
+       - Do you see 4?
+       - type ~quit()~ to exit.
+    2. Test for R in Emacs
+       - ~M-x R~
+*** R Coding Basics - compare
+*** Data handling in R
+** Session 6
+*** Data handling in Python
+** Session 7
 *** Interaction Plots
-** Experimental Programming in Python
-*** Psychopy Library
-** Final Projects
-   1. Program a simple, even trivial, but functional program for a very simple psychological task that collects RT data from keyboard presses (e.g. a Stroop Task or a Posner Cuing Task).
-   2. Collect data on classmates
-   3. Use R to read in the data and generate some simple computations, e.g. the mean RT and a plot of something (e.g. conflict and no conflict conditions of the stroop subdivided by gender, glasses, haircolor). Try a boxplot or a scatter plot depending on the type of data you collected.
-   4. Write a simple *.org file that includes the text and analysis and generates a simple report with at least one citation. This file should be complete. That is it should read in the data, perform the analyses, and directly format and insert the data and plots into the final document. The experimental code should be included as an appendix. 
+**** Plotting in R
+** Session 8
+*** Experimental Programming in Python
+**** Psychopy Library
+** Session 9
+*** Writing a simple report
+*** Mixing Code and Text for reproducibility
+** Session 10
+** Session 11
+** Session 12
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
