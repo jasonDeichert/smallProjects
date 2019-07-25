@@ -39,7 +39,6 @@
   To meet the learning objectives you will need to *do* more than you listen or observe. You will also need to break old habits. That means in the beginning it will be harder to do simple things. It also means that in the future things that used to be impossible for you to do will now be possible (but they may still not be easy). Combining computer skills with with your psychology content knowledge makes you more attractive to employers and on a graduate school application. 
 
   Thus, this course will require you to use the Linux operating system (the XUbuntu flavor) and tools available within that space. Later on, after this course, if you wish to return to the world of OSX and Windows10 you will know what you are looking for, and you will have the skills necessary to make it available. 
-
 * Outline
 ** Session 1 Linux
    1. Learn how to boot your computer from a USB. 
