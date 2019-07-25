@@ -40,11 +40,54 @@
 
   Thus, this course will require you to use the Linux operating system (the XUbuntu flavor) and tools available within that space. Later on, after this course, if you wish to return to the world of OSX and Windows10 you will know what you are looking for, and you will have the skills necessary to make it available. 
 * Outline
-** Session 1 Linux
-   1. Learn how to boot your computer from a USB. 
-   2. Run an XUbuntu Live CD
-   3. Install Linux XUbuntu to a second USB
-   4. Boot your computer from the /new/ USB and install *emacs* /from the command line./
+** Session 1 Installing Linux
+*** Instructions for testing the Live CD and installing to USB
+   2. Learn how to boot your computer from a USB. 
+      - Mac OSX - start the computer with option key held down
+      - Windows - may require going into the bios and enable booting usb (usually some key combo of F2 or F10 during the boot process - look for a very briefly flashed screen); followed by rebooting with a different F Key. Another option is to tell Windows to boot from recovery mode. Find the "advanced" menu of the Windows Start Up menu (look in the "recovery" section of the start-up). Select from "another device". Some devices, like Surfaces, have other key combinations.
+      - Other systems: chrome books; ipads; probably won't work.
+      - Sometimes it takes a while to figure out which of the options is the Xubuntu option. If one doesn't work, just note what it was and next time try a different one. 
+   3. Run an XUbuntu Live CD
+      If problems starting the use without installing option, restart, select install, and then quit from the first screen. That will usually drop you into what you need.
+   4. Explore the Live USB
+      1. Connect to the wifi.
+         1. Click up/down arrow in upper right corner of screen.
+         2. Select the correct options (to be demonstrated).
+            - Authentication: PEAP
+            - Click box no certificate required
+            - Use your full watiam address (including the stuff after @ sign usually).
+      2. Verify working by opening Firefox Web Browser
+         1. Click little icon upper left.
+         2. From dropdown menu select /Web Browser/.
+         3. Go to https://uwaterloo.ca
+      3. Explore some of the other programs available in the dropdown menu and under the different headings.
+         1. Which program is like Word for Windows?
+         2. How do you take a screenshot?
+         3. What is the standard email program on this version of Linux?
+      4. Installing programs
+         There is a "gui" installer, but we are going to use the package management system from the command line.
+         1. Open the terminal emulator
+         2. type ~sudo apt update~
+            What does /sudo/ mean?
+         3. Do *NOT* upgrade your old packages at this point.
+         4. type ~sudo apt install emacs~ ; accept the defaults
+         5. Leave the terminal open but drag over to the menu in the upper left corner and inspect the /Development/ folder. You should emacs in there. Do *not* click it. We are going to launch from the command line.
+         6. Back in terminal type: ~emacs &~.
+            What does the ampersand do? It lets things run in the background without freezing the terminal. If you don't know what I mean, then start without the ampersand, and then try to type another command in the terminal. Remember: if you don't know what will happen? Try it (after maybe backing up important files).
+         7. Go to the emacs help menu and under the drop down options pick emacs psychotherapist. Remember it is here when you need some counselling in the first few sessions of this course.
+   5. Syllabus review (short break). 
+   6. Problems with the live "CD". 
+      Nothing is permanent. All your upgrades and installations vanish everytime you turn it off and you would have to do it all over again everytime you restart. So, I want you to install Xubuntu so that any changes you make will be persistent, but since I don't want to require you to alter your personnel machine, will will install it to a usb and you will then run your computer from this new, second, usb where the changes you make will persist.
+   7. Install Linux XUbuntu to a second USB
+      This will be the major goal of the rest of our session. Follow the prompts on the screen. Work together. Ask questions. 
+      
+      **Where you need to be careful**
+
+      When you are picking where to install the system you need to make sure to pick the new USB location. It will probably be /dev/sd<something or other>. If you pick the wrong device you will install it in place of your current operating system. Try running, from a terminal, =ls /dev/sd* = without the usb in place. Then plug in the USB and note the new appearance of the another ~/dev/sd<something>~. 
+
+      When you pick where to install the /bootloader/ make sure you also pick the USB or you may have trouble booting into your old system the way you are used too. 
+   8. When you think you are done, shut things down. Remove the live USB/CD, but leave the other one in place. Follow the steps you need to to boot your computer from a USB. If you are able to launch Ubuntu (and it might take a few tries to find the right menu entry) then you will see linux start. Enjoy the feeling of immense power.
+   9. Boot your computer from the /new/ USB and install *emacs* /from the command line/ again.
       1. The command line - open up a "terminal". Your terminal will be running a "shell."
       2. Package Managers
          1. The ubuntu package manager
@@ -53,14 +96,7 @@
             - apt install 
             - apt search
             - apt remove
-         2. A basic demonstration
-            #+Begin_src sh :eval never :export code
-            sudo apt update
-            sudo apt search emacs
-            sudo apt install emacs
-            emacs &
-            #+end_src
-            
+   10. This time you might want to update those old programs. 
 *** Troubleshooting
     - I don't have a USB port? :: Do you have an sdcard port? Yes? You can use that. If you have neither you will need a different computer. It can be a cheap (as in the price of textbook cheap) and old one.
     - I only have one USB port. :: Can you work with a neighbor to repeat the installation instructions on a second USB that you can use on your machine? If not, you may need something like this. 
@@ -74,8 +110,8 @@
     - Why use Xubuntu? :: Is it different from Ubuntu (Debian, Arch, Fedora, OpenSuse...)? Linux is a kernel that powers the system. All the rest are different choices people make of the tools they want to wrap around that "engine." XUbuntu is a reasonably light-weight linux distribution that runs well on slow machines, and yet has enough of a user base to make it reasonably easy to find help on line.
 *** Homework
     1. Send me a screenshot of emacs open and running on your laptop.
-       Hints: look for xfce4-screenshooter to take the screenshot. Log on to learn while running linux. Of course that will require you to figure out how to connect to the internet.
-    2. Look at the available software applications and download one (1). Don't go crazy on this. You are running your whole computer from a small usb. Just find one that strikes you as cool or interesting and install it, play with it, and write a one-paragraph description of it using this format:
+       Hints: look for xfce4-screenshooter to take the screenshot. Log on to /Learn/ while running linux. Of course that will require you to connect to the internet, and that will require you repeating those steps to configure the connection.
+    2. Look at the available software applications and download one (1). Don't go crazy on this. You are running your whole computer from a small usb, it will already be slow, and you will already be limited for space. Just find one program (look for "software" in the upper left corner icon drop down menu) that strikes you as cool or interesting and install it, play with it, and write a one-paragraph description of it using this format:
        
        #+Attr_HTML: :textarea t :width 40
        #+Begin_example
@@ -88,6 +124,8 @@
        #+END_Example
 
        Save it with yourlastname-firstname_pkgname.org as the file name. Upload it to the dropbox on learn. And save it, because you will need it again soon. 
+
+       Use the program "mousepad" for the above. 
 ** Session 2 Command Line Basics and EMACS Introduction
 *** Command Line
 **** What is it?
