@@ -131,7 +131,6 @@
 **** What is it?
 **** Why use it? [[https://www.quora.com/How-important-is-it-to-learn-command-line-interfaces/answers/1620528][One opinion.]]
 ***** The [[http://write.flossmanuals.net/command-line/introduction/][Manual]]
-**** Find another
 **** Find your terminal?
      Why is it called the terminal?
 ***** Operating Systems
@@ -151,52 +150,167 @@
       - Linux 
         - probably xterm
 **** Terminal Games
-     1. Find the location of your Desktop folder.
-     2. Change to that directory.
-     3. Find out how much free space you have on your computer disk.
+     1. ~ls -la /home/<username>~
+        - What does all this output mean?
+        - What changes when you leave out the ~-la~?
+        - What does the hyphen do?
+     2. Find the location of your Desktop folder.
+     3. Change to that directory.
+        ~cd~
+     4. Find out where you are?
+        ~pwd~
+     5. Find out how much free space you have on your computer disk.
+        ~df -h~
+     6. How do you get help for most of these commands?
+        Usually ~command --help~ or (~-h~)
+     7. How do you find the manual?
+        ~man ls~
+     8. Navigating
+        1. Paths: absolute and relative.
+        2. What do those "dots" mean?
+        3. What do those slashes mean?
+        4. Tab is your friend.
+        5. Try the up arrow too.
+     9. File ownership
+        1. Make a text file from the command line.
+           ~touch /home/yourname/Documents/testText.txt~
+        2. Who owns it?
+     10. Make a directory
+         ~mkdir /home/britt/Documents/myFirstDir/~
+         
+         Spaces are the enemy. Never use them, but if you have to, escape (~\~) them.
+     11. Want more practice? Try the tutorials [[https://ryanstutorials.net/linuxtutorial/commandline.php][here]].
 *** Exercises Emacs
 **** Emacs
-     1. Tutorial ~Ctrl-h t~ (aka =C-h t=)
-     2. Find the Psychotherapist - you may need it.
-     3. Play a game - try ~M-x tetris~
-     4. Init files and packages. 
+     1. What are Control and Meta used for? What keys are they?
+        May depend on your keyboard and operating system. Don't like what they are? [[https://www.x.org/releases/current/doc/man/man1/xmodmap.1.xhtml][Remap them]]. 
+     2. Tutorial ~Ctrl-h t~ (aka =C-h t=)
+     3. Find the Psychotherapist - you may need it.
+     4. Play a game - try ~M-x tetris~
+     5. Init files and packages. 
         Emacs has it's own package system that allows you to greatly expand its functionality. Most of those customization are set up in your =~/.emacs.d/init.el= file. Create it if it doesn't exist. 
         You can learn more by reading the [[info:emacs#Init%20File][info file]].
-     5. [[info:org#Top][Orgmode]]
-        1. Create an outline.
-        2. Create a link
-        3. Insert an image
-        4. Export as a web page. 
-** Session 3 Version Control Github
+     6. Program your editor
+        1. Turn off the tool bar?
+        2. How? ~C-h-f~ will allow you to search for functions. Try the keyword menu and tab and see if you come across a likely contender (~menu-bar-showhide-tool-bar-menu-customize-disable~).
+        3. Navigate to the scratch buffer. Put that function in parantheses. Move to the end. Type ~C-x C-e~. Did your tool bar go away?
+        4. Point is that you can heavily customize your editor. Don't worry too much about it for now. 
+     7. [[info:org#Top][Orgmode]]
+        1. What is it? About the best thing ever.
+        2. Make an outline. Keep a calendar. Add code to your documents. Make links. Include images.
+        3. Practice now:
+           Where is the help, remember? ~C-h i~
+           Note bene: may need to get ~sudo apt install emacs25-common-non-dfsg~ for all the documentation. 
+           1. Learn to use the short cuts to open, save, and so on. That is one of the powers of the command line and similar style tools. Enhance your productivity and control. 
+           2. Create an outline.
+           3. Create a link
+           4. Insert an image
+           5. Export as a web page.
+           6. What would you need to export a pdf?
+              Try installing ~texlive-latex-recommended~. If that doesn't fix the problem go with ~texlive-full~. This is big.
+** Session 3 Version Control Github and Beginning With Python
 *** Version Control
 **** Git
      **Not** the same as Github, though that is one of the more common /social/ uses of git for sharing and collaborating on code. 
+**** Social Coding and Data Sharing
+     A brief discussion of what is going on here.
+***** OSF.io
+      1. Sign up
+      2. Find my projects
 **** Installation of Git
-     - seriously recommend [[https://gitforwindows.org/][Windows users]] use it through the command line (BASH). 
+     ~sudo apt install git~
+**** Github and Gitlab and Bitbucket and ...
+     1. Github is the big one with a large external presence.
+        1. Sign-up
+     2. The university provides you with a gitlab presence at [[https://git.uwaterloo.ca]]
 **** Git
      1. Open a terminal
      2. Move (~cd~ or ~dir~) into your Desktop
      3. type =git init myrepo=
      4. Should see message from the terminal prompt that it has been created.
      5. Feel free to delete (e.g. =rm -rf ./myrepo=)
+**** Making and Cloning a Course Repo
+     1. I create an empty repository on github
+     2. I create a repository on my laptop.
+     3. I add some small file.
+     4. I set the upstream (origin) as the github site, and then I push.
+     5. Now if I use a different computer I can push and pull (to be discussed) from this github site and keep everything synced together. 
 **** Magit
-**** Forks and Clones and Pull Requests
+     1. Emacs provides you with an interface for this called magit.
+     2. To use it you will have to create an init file.
+        Let's you discover the hidden directories.
+     3. You will have to enable emacs package repositories (everyone in linux land has a package manager).
+     4. You will need to install the magit package.
+     5. Then it is ~C-c m~ or ~M-x magit~
+**** Forks and Clones and Pull Requests  :homework:
+     1. Diagram the logic on the board.
+     2. Get everyone to create a fork of the course repository
+     3. Get everyone to create a local clone on their laptop
+     4. Set a second upstream pointing to me.
+     5. Pull from my repo to laptop.
+     6. Update and accept the changes.
+     7. Push this to your fork.
+     8. Add a new file to your laptop version.
+     9. Push this to your fork.
+     10. From github generate a pull request for me. This is one of this weeks homeworks. 
+*** Beginning Python
+**** Python
+     1. Test for Python in a terminal.
+        - open a terminal
+        - type ~python --version~ then ~enter~
+        - If you see an answer you have python. Type ~python~. Note the cursor has changed.
+        - type ~2 + 2 enter~
+        - Do you see 4?
+        - type ~quit()~ to exit.
+        - Why do you need to have the parentheses after the word quit?
+     2. If you only have version 2 try the command again with ~python3 --version~.
+     3. If you don't have python3, get it.
+**** Coding - General
+     Coding - providing instructions to a computer.
+     The computer only does what you tell it. 
+**** Writing Code
+     Code files are just plain text. You can open and write them in anything, though some tools can make the writing substantially easier. Usually extensions identify a language (e.g. .py for python and .R for R). 
+**** Testing Code
+***** Interactive
+      We already did a little of this, but let's try again.
+      #+begin_src python :session *testpy* :export code :results silent
+        def myadd(a,b):
+            return(a+b)
+      #+end_src
+
+      #+begin_src python :results output :exports both :session *testpy*
+        print(myadd(3,4))
+      #+end_src
+
+      #+RESULTS:
+      : 7
+
+      For interactive session it is like you are interacting with a user. You type your lines one or a few at a time, get an answer, and then decide what to do next. 
+***** Script
+      You write a separate file that you read in, or import and use. Here is the file.
+
+      #+include: "./code/testScript.py"
+
+      #+begin_src python :results output :exports both :session *testpy*
+        from code.testScript import *
+
+        print(add2(3,4))
+
+        print(addMany([1,2,3,4,5,6]))
+      #+end_src
+
+      #+RESULTS:
+      : Python 3.7.3 (default, Jun 24 2019, 04:54:02) 
+      : [GCC 9.1.0] on linux
+      : Type "help", "copyright", "credits" or "license" for more information.
+      : 7
+      : 21
+      : python.el: native completion setup loaded
+
+      Try creating this file and then typing these commands in your terminal. For various weird reasons if you want the test script to be in a subdirectory of where you are working you will need a file =__init__.py= to trick python into treating it as a package. See the [[https://docs.python.org/3/tutorial/modules.html#packages][documentation]] and this [[https://stackoverflow.com/questions/1260792/import-a-file-from-a-subdirectory][stackOverflow answer]].
+**** Coding basics
+     IAMHERE
 ** Session 4 Python 
-*** Python
-    1. Test for Python in a terminal.
-       - open a terminal
-       - type ~python --version~ then ~enter~
-       - If you see an answer you have python. Type ~python~. Note the cursor has changed.
-       - type ~2 + 2 enter~
-       - Do you see 4?
-       - type ~quit()~ to exit.
-       - Why do you need to have the parentheses after the word quit?
-*** Coding - General
-*** Writing Code
-*** Testing Code
-**** Interactive
-**** Script
-*** Coding basics
 *** Types
     - Integers
     - Doubles/Floats
