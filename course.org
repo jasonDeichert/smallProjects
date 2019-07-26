@@ -190,6 +190,15 @@
      5. Init files and packages. 
         Emacs has it's own package system that allows you to greatly expand its functionality. Most of those customization are set up in your =~/.emacs.d/init.el= file. Create it if it doesn't exist. 
         You can learn more by reading the [[info:emacs#Init%20File][info file]].
+        A minimal init.el to get started
+
+        #+begin_src elisp :eval never :exports code
+        (require package)
+        (package-initialize)
+        (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages") t)
+        #end_src
+
+
      6. Program your editor
         1. Turn off the tool bar?
         2. How? ~C-h-f~ will allow you to search for functions. Try the keyword menu and tab and see if you come across a likely contender (~menu-bar-showhide-tool-bar-menu-customize-disable~).
@@ -237,7 +246,7 @@
      5. Now if I use a different computer I can push and pull (to be discussed) from this github site and keep everything synced together. 
 **** Magit
      1. Emacs provides you with an interface for this called magit.
-     2. To use it you will have to create an init file.
+     2. To use it you will have to create an init file (and delete ~/.emacs)
         Let's you discover the hidden directories.
      3. You will have to enable emacs package repositories (everyone in linux land has a package manager).
      4. You will need to install the magit package.
@@ -273,12 +282,12 @@
 **** Testing Code
 ***** Interactive
       We already did a little of this, but let's try again.
-      #+begin_src python :session *testpy* :export code :results silent
+      #+begin_src python :session *pythonPractice* :export code :results silent
         def myadd(a,b):
             return(a+b)
       #+end_src
 
-      #+begin_src python :results output :exports both :session *testpy*
+      #+begin_src python :results output :exports both :session *pythonPractice*
         print(myadd(3,4))
       #+end_src
 
@@ -291,7 +300,7 @@
 
       #+include: "./code/testScript.py"
 
-      #+begin_src python :results output :exports both :session *testpy*
+      #+begin_src python :results output :exports both :session *pythonPractice*
         from code.testScript import *
 
         print(add2(3,4))
@@ -317,16 +326,42 @@
      6. Import your file with you function.
      7. Use your function.
      8. Take a screenshot of your terminal session showing the above session.
-     9. Submit that for your homework *along* with your .py file.
+     9. Submit that for your homework *along
 ** Session 4 Python 
 *** Types
-    - Integers
-    - Doubles/Floats
-    - Booleans
+    - Integers :: 1, 2, ...
+    - Doubles/Floats :: 10.3, pi
+    - Booleans :: True , False 
+                  NB: some languages, e.g. R, use TRUE. 
     - Lists and Tuples
-    - Dictionaries
+      - Tuples :: (1,2), ('a',10.34,False) Have a fixed number of slots, can be different types.
+                  Define with parentheses
+      - Lists  :: [1,2,3,4] Have a potentially infinite number of slots, but must all be same type.
+                  Define with square brackets.
+    - Dictionaries :: {'firstName' : 'Britt', 'lastName' : 'Anderson'}      
+    - Comments :: Not really code, but allows you to put stuff in your programs for other users and yourself to read. In python the lines start with a hash "#"
 *** Constants and Variables
+    A conceptual difference more than a implementation difference
+    #+begin_src python :exports both :results value :session *pythonPractice*
+      NOHRSDAY = 24
+
+      x = NOHRSDAY
+
+      x
+    #+end_src
+
+    #+RESULTS:
+    : 24
+
+**** Coding styles
+     Makes your code easier to read by people using the same language.
+     
+     Try to follow good programming style, and if avaialable, langugage guides.
+
+     [[https://www.python.org/dev/peps/pep-0008/][Python Style Guide]]
 *** Assignment and Equality
+    ~=~ is different from ~==~
+
  #+begin_src python :results output :exports both
  a = 2
  print(a == 3)
@@ -334,13 +369,184 @@
 
  #+RESULTS:
  : False
-
-*** Data Types
+ 
 *** Loops
+    Think of recipes: "stir egg whites until peaked" or "simmer for 30 minutes". That is the intuition for a 
 **** For 
+     Python refers to things called "iterables." To iterate is another way of saying something you can keep doing the same thing over and over to. Imagine a bowl of ice cream. It is "eatable". You take one spoon, and keep taking spoonfuls until the bowl is empty. 
+***** Indexing
+      You can get the location of an element in a list by referring to its /index/. Indexes start at 0 for many computer languages, but not all (e.g. R and Matlab). There are various shorthands for getting ranges of elements or the last element.
+
+      #+Name: Indexing
+      #+begin_src python :session *pythonPractice* :exports both :results output
+        nameDict = {'firstName' : 'Britt', 'lastName' : 'Anderson'}
+        mylist = list(range(1,10))
+
+        print(nameDict['firstName'])
+
+        print(mylist)
+
+        print(mylist[0])
+
+        print(mylist[-1])
+
+        print(mylist[0:4])
+      #+end_src
+
+      #+RESULTS: Indexing
+      : Britt
+      : [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      : 1
+      : 9
+      : [1, 2, 3, 4]
+     
+
+      #+Name: For Loop
+      #+begin_src python :session *pythonPractice* :exports both :results output
+        for ml in mylist:
+            print(ml)
+
+
+        for i,ml in enumerate(mylist):
+            print("The {0}th element was {1}".format(i,ml))
+      #+end_src
+
+      #+RESULTS: For Loop
+      #+begin_example
+      1
+      2
+      3
+      4
+      5
+      6
+      7
+      8
+      9
+      The 0th element was 1
+      The 1th element was 2
+      The 2th element was 3
+      The 3th element was 4
+      The 4th element was 5
+      The 5th element was 6
+      The 6th element was 7
+      The 7th element was 8
+      The 8th element was 9
+      #+end_example
+***** For Class Exercise
+      1. Create a list of at least 8 individual characters.
+      2. Make sure they are **not** in alphabetical order
+      3. Print the letters one at a time.
+      4. Print the letters sorted alphabetically one at a time, but /do not/ overwrite your original list.
+      5. Print the letters from both lists with a format command that says which position the letter is in. 
+
+      #+Name: Class Demo For Command Exercise
+      #+begin_src python :exports both :results output :session *pythonPractice*
+        myList = list("brittAnderson")
+        for l in myList:
+            print(l)
+        print("end of list 1\n")
+
+
+        for l in sorted(myList):
+            print(l)
+        print("end of list 2\n")
+
+
+        for i,l in enumerate(zip(myList,sorted(myList))):
+            print("The {0}th letter of myList is: {1}, but is {2} in the sorted list.".format(i,l[0],l[1]))
+        print("Thus ends the lesson")
+      #+end_src
+
+      #+RESULTS: Class Demo For Command Exercise
+      #+begin_example
+      b
+      r
+      i
+      t
+      t
+      A
+      n
+      d
+      e
+      r
+      s
+      o
+      n
+      end of list 1
+
+      A
+      b
+      d
+      e
+      i
+      n
+      n
+      o
+      r
+      r
+      s
+      t
+      t
+      end of list 2
+
+      The 0th letter of myList is: b, but is A in the sorted list.
+      The 1th letter of myList is: r, but is b in the sorted list.
+      The 2th letter of myList is: i, but is d in the sorted list.
+      The 3th letter of myList is: t, but is e in the sorted list.
+      The 4th letter of myList is: t, but is i in the sorted list.
+      The 5th letter of myList is: A, but is n in the sorted list.
+      The 6th letter of myList is: n, but is n in the sorted list.
+      The 7th letter of myList is: d, but is o in the sorted list.
+      The 8th letter of myList is: e, but is r in the sorted list.
+      The 9th letter of myList is: r, but is r in the sorted list.
+      The 10th letter of myList is: s, but is s in the sorted list.
+      The 11th letter of myList is: o, but is t in the sorted list.
+      The 12th letter of myList is: n, but is t in the sorted list.
+      Thus ends the lesson
+      #+end_example
+
 **** While
-*** Conditionals
+     These are like for loops in that they do stuff over and over, but unlike for loops they do things indefinitely, until that is, you tell them to stop. How do you do that? You use a predicate that they test for each time through the loop. That means you need to specify a /predicate./
+***** Conditionals
+      This is where you test whether something is or is not ~True~. Note that Python, but not all computer languages, treats 0 as the same as False, and all non-zero values as True. 
+
+      #+begin_src python :exports code  :session *pythonPractice* :results output
+        if (2 == 3):
+            print("Wha.....?\n\n")
+        elif (3 == 2):
+            print("Now that is odd")
+        else:
+            print("2 does not equal 3.")
+      #+end_src
+
+      #+RESULTS:
+      : 2 does not equal 3.
+***** While
+      NB: note the use of colon (:) at the end of the =for= and =while= lines. 
+      #+begin_src python :exports both :session *pythonPractice: :results output
+        i = 0
+        while (i<=10):
+            print("brittAnderson"[i])
+            i = i+1
+          #+end_src
+
+          #+RESULTS:
+          #+begin_example
+          b
+          r
+          i
+          t
+          t
+          A
+          n
+          d
+          e
+          r
+          s
+          #+end_example
+
 *** Functions
+    You have seen an example of this before. Think of a function as a machine that grinds meat. You pour in a cow. You get out hamburger. Input. Output. Note that arguments are "local". They are not referring to variables outside, in the program globally, but only make sense locally in the function. You drop values into those slots, and they you can use those names  in your function, because until you use it, your function doesn't know what it will be getting. 
  #+begin_src python :exports code  :session *pythonPractice*
  def myadd(x,y):
     return(x+y)
@@ -354,13 +560,84 @@
 
  #+RESULTS:
  : 5
-*** Interpretation and Interactivity
-*** Scripts
-*** Libraries
+
+**** Class Exercise with Functions :homework:
+     You will be required to turn this in, but you can get started now. 
+     1. Look up how to get user input from python on the command line.
+     2. Write a script that I will run on the command line thus:
+        ~python functionHW.py~
+     3. Your script should ask me to enter a word.
+     4. It will then print out the word.
+     5. Print out the sorted version one character at a time.
+     6. Ask me if I want to do it again (y/n). If 'y', repeat, and continue repeating until I answer 'n'.
+*** Libraries :classdiscussion:
+    Lots of people use python. If you can think that someone ought to have done ... they probably have. Use libraries whenever you can, because ... discussion points. 
+**** What are some popular libraries? :classactivity:homework:
+     [[https://pythontips.com/2013/07/30/20-python-libraries-you-cant-live-without/][Here]] are 20 recommended ones.
+     
+     Of particular note for us are:
+     1. Numpy
+     2. Scipy
+     3. Matplotlib
+     4. Pillow
+     5. Sympy
+
+     Divide class into small groups. Assign a library. Have them present to us what it is good for, and maybe a short demo. 
+     
+     Homework: Submit a short .py script to the class github repo that demonstrates the importation of your library and some basic use. 
 *** Programs
+    Nothing else really, but the more prolonged and complicated concatenation of the above. 
 *** Debugging and Basic Working Methods
+    The most basic is just to ~print~ statements into your code so that you can see what happening and whether your variables are actually what you think they should be. 
 *** IDEs
+    What does IDE stand for?
+
+    What are common IDEs for python and how do you get them. What are they good for. 
+
+    Two popular ones are:
+    1. Spyder
+    2. pyCharm
+
+    This is what you need to use for this course: emacs.
+    1. Open up a blank file with a name that ends in .py
+    2. Type in some lines (e.g. a = 2, b = 3, print(a+b))
+    3. Type C-c C-c on the first line.
+    4. Read the error message
+    5. Fix it.
+    6. Keep C-c C-c'ing on each line and look at what is happening in your console.
+    7. When your cursor is on a python word, like ~print~, look in the mode line.
+    8. Try M-x linum-mode
+    9. To see some fancier stuff install the ~elpy~ package for emacs.
+       1. M-x package-list-packages
+       2. C-s elpy
+       3. type "i"
+       4. type "x"
+    10. An easier way to get and maintain your emacs package is "use-package". See some instructions [[https://elpy.readthedocs.io/en/latest/introduction.html#overview][here]].
+    11. When you try ~(elpy-enable)~ you will get error messages. Why? You don't have all the dependencies.
+    12. Uninstall elpy (go to that list and hit 'd' on the elpy package).
+    13. Follow instructions [[https://github.com/jorgenschaefer/elpy][here]] to see what python packages you need and install them.
+    14. What no pip? Welcome to the world of using your computer (and dependency hell). 
+        #+begin_src sh :eval never :exports code
+          sudo apt install python-pip
+          pip install jedi rope flake8 autopep8 yapf black
+        #+end_src
+    15. Then reinstall elpy. Whoooo - wipes brow.
+    16. No! Needs to be for python3. Repeat all the above for python3 and then customize your emacs python shell command like this
+        #+begin_src sh :eval never :exports code
+        M-x customize-variable python-shell-interpreter
+        #+end_src
+    17. Check out the elpy [[https://elpy.readthedocs.io/en/latest/introduction.html#overview][documentation]]. Lots of cool features to make your programming easier. 
+
+    Why do you have to do all this? Because Mama a'int spoon feeding you anymore boys and girls. 
+
+    
 *** Pip to Install Libraries and Virtual Environments
+
+**** Pip
+     pip is the python install package program. There have been many ways to install python packages over the years and you will find a lot of tracks on the internet. There is a new system coming called wheel, but for now stick with pip (ubuntu also has many of these packages, but I find it better to try and not to mix package managers. Use your choice; mine is pip.
+
+**** Virtual Environments
+     To come. 
 ** Session 5 R
 *** R
     1. Test for R from a terminal.
