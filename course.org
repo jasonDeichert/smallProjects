@@ -308,8 +308,16 @@
       : python.el: native completion setup loaded
 
       Try creating this file and then typing these commands in your terminal. For various weird reasons if you want the test script to be in a subdirectory of where you are working you will need a file =__init__.py= to trick python into treating it as a package. See the [[https://docs.python.org/3/tutorial/modules.html#packages][documentation]] and this [[https://stackoverflow.com/questions/1260792/import-a-file-from-a-subdirectory][stackOverflow answer]].
-**** Coding basics
-     IAMHERE
+**** Confirming You Can Write and Run a Python File :homework:
+     1. Create a file ~lastname.py~
+     2. Write the myadd function I demonstrated, but give it a different name.
+     3. Save.
+     4. Open up a terminal.
+     5. Start a python session.
+     6. Import your file with you function.
+     7. Use your function.
+     8. Take a screenshot of your terminal session showing the above session.
+     9. Submit that for your homework *along* with your .py file.
 ** Session 4 Python 
 *** Types
     - Integers
