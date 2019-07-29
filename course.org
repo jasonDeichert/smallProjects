@@ -273,7 +273,7 @@
         - type ~quit()~ to exit.
         - Why do you need to have the parentheses after the word quit?
      2. If you only have version 2 try the command again with ~python3 --version~.
-     3. If you don't have python3, get it.
+     3. If you don't have python3, get it (may want the python3-dev version; often the hyphen -dev packages will work better for you as a bleeding edge user). 
 **** Coding - General
      Coding - providing instructions to a computer.
      The computer only does what you tell it. 
@@ -630,15 +630,34 @@
 
     Why do you have to do all this? Because Mama a'int spoon feeding you anymore boys and girls. 
 
-    
 *** Pip to Install Libraries and Virtual Environments
-
 **** Pip
      pip is the python install package program. There have been many ways to install python packages over the years and you will find a lot of tracks on the internet. There is a new system coming called wheel, but for now stick with pip (ubuntu also has many of these packages, but I find it better to try and not to mix package managers. Use your choice; mine is pip.
-
 **** Virtual Environments
-     To come. 
+     You have system installations of things (like python and its libraries). Now you need to install something new for development purposes. You don't want different version of the same program clashing. The solution is to install your development version of libraries in a "virtual" environment. That is you trick your machine into thinking that a different directory is the root of everything, and thus it can install locally without disturbing your other system files. There are various subtle variations of this arrangement that may be important for different scenarios and use cases. There is also more than one virtual environment tool out there. We will be using and testing the built-in one. 
+***** TODO VENV 
+      1. [[https://docs.python.org/3/library/venv.html][Link]] to the python description page
+      2. Creating a venv and downloading [[https://www.psychopy.org/about/index.html][Psychopy]] (to be used later in the course).
+         1. First create a directory where you will store/keep your psychopy installation. Maybe something like:
+            ~mkdir /home/britt/research/psychopy/~
+         2. change to that directory
+         3. make sure you have installed the venv module. For our XUbuntu version that is ~sudo apt install python3-venv~
+         4. ~python3 -m venv /home/britt/research/psychopy~
+            Note this is just the name of my directory. Yours will be named differently.
+         5. Then you "activate" this virtual environment for the correct installation.
+            ~source /home/britt/research/psychopy/bin/activate~
+         6. Note the change in the prompt from your terminal
+         7. Now try to install psychopy with
+            ~pip install psychopy~
+         8. This will pull in  a lot of files. Be patient.
+         9. We will need (according to the [[https://www.psychopy.org/download.html#download][psychopy download]] page wxPython [a library for making gui's]).
+         10. Install pygame (inside the virtualenv with pip)
+         11. Then edit the file <venv>/lib/python/site-packages/psychopy/demos/coder/stimuli/face_jpg.py to add ",winType = 'pygame')" to the function that creates the window.
+         12. The run python <path>/face_jpg.py
+             NB: I am having trouble getting pyglet windows to work, but pygame seems fine. (pip uninstall pyglet; then pip install pyglet==1.3)
+         13. For an exercise, have them get cheese and change out the picture to use their own face? Maybe use gimp or inkscape to select the face and make rest transparent? **TODO**
 ** Session 5 R
+TODO IAMHERE Replicate some of the python exercises with R to show how similar things are. 
 *** R
     1. Test for R from a terminal.
        - open terminal
