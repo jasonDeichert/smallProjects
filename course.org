@@ -657,7 +657,6 @@
              NB: I am having trouble getting pyglet windows to work, but pygame seems fine. (pip uninstall pyglet; then pip install pyglet==1.3)
          13. For an exercise, have them get cheese and change out the picture to use their own face? Maybe use gimp or inkscape to select the face and make rest transparent? **TODO**
 ** Session 5 R
-TODO IAMHERE Replicate some of the python exercises with R to show how similar things are. 
 *** R
     1. Test for R from a terminal.
        - open terminal
@@ -668,8 +667,323 @@ TODO IAMHERE Replicate some of the python exercises with R to show how similar t
     2. Test for R in Emacs
        - ~M-x R~
 *** R Coding Basics - compare
-*** Data handling in R
+*** Types
+    R has many of the same types, but also makes much greater use of lists where there are names and elements (rather like a python dictionary). Many built-in statistical functions will return S3 or S4 objects. The point isn't to know what they are, as to know that there are special types in R that have special handling in R.
+
+    #+Name: typeof
+    #+Caption: Use the function ~typeof~ in R to determine the datatype of a variable. 
+    #+begin_src R :session *R363*
+      a = 1
+      typeof(a)
+    #+end_src
+
+    #+RESULTS:
+    : double
+
+    #+Name: Lists and Tuples and Data Frames
+    #+Caption: Lists, Tuples, Data.Frames and Data.Tables
+    #+begin_src R *R363*
+      tpl = c(1,2)
+      lst = list("firstName" = 'Britt', "lastName" = 'Anderson')
+      df = data.frame('fn' = c("bob","jane","griffin"),"gndr" = c('m','f','o'))
+      df
+    #+end_src
+
+    #+RESULTS: Lists and Tuples and Data Frames
+    | bob     | m |
+    | jane    | f |
+    | griffin | o |
+
+
+    You can think of =data.frames= as sort of like spread sheets. But they are much handier. For example:
+*** Data Selection in R :classactivity:
+    1. Open up Emacs.
+    2. Type ~M-x R~
+    3. You should see an R environment appear.
+    4. Try it with ~2+2~ followed by <enter>.
+    5. Now type ~cars~.
+    6. Is ~cars~ a data.frame?
+       #+begin_src R :session *R363*
+         is.data.frame(cars)
+       #+end_src
+
+       #+RESULTS:
+       : TRUE
+    7. How many cars are there that can go faster than 10, but not more than 20?
+       #+begin_src R :session *R363*
+       length(cars$dist[cars$speed > 10 & cars$speed < 20])
+       #+end_src
+
+       #+RESULTS:
+       : 29
+    8. Can you do that easily in Excel?
+    9. Questions for you to explore:
+       1. Sort (or ~order~) cars by the ~dist~ variable.
+       2. Find the mean and standard deviation of the speed of the cars.
+       3. Are there other datasets?
+          #+begin_src R :export code :results hidden :eval never :session *R363*
+            library(help="datasets")
+          #+end_src
+       4. Open any of the datasets that catches your eye.
+       5. What are the column names?
+       6. How many rows?
+       7. What is the /comment/ designator for R?
+       8. What is the ending extension of an R script?
+
+*** Assignment and Equality
+    ~=~ is different from ~==~
+
+    
+    #+begin_src R :session *R363* :results output :exports both
+ a = 2
+ print(a == 3)
+ #+end_src
+
+ #+RESULTS:
+ : 
+ : [1] FALSE
+   While some things are the same, not all the language features are identical. You can use your knowledge of one language to help you make guesses in the other, but you cannot count on the notation and syntax being identical.
+*** Loops
+    This is a good example of where things are slightly different
+**** For 
+           #+Name: For Loop in R
+      #+begin_src R :session *R363* :exports both :results output
+             ml = seq(1:10)
+
+             for  (m in ml) {
+                 print(ml)
+             }
+      #+end_src
+
+      #+RESULTS: For Loop in R
+      #+begin_example
+
+       [1]  1  2  3  4  5  6  7  8  9 10
+       [1]  1  2  3  4  5  6  7  8  9 10
+       [1]  1  2  3  4  5  6  7  8  9 10
+       [1]  1  2  3  4  5  6  7  8  9 10
+       [1]  1  2  3  4  5  6  7  8  9 10
+       [1]  1  2  3  4  5  6  7  8  9 10
+       [1]  1  2  3  4  5  6  7  8  9 10
+       [1]  1  2  3  4  5  6  7  8  9 10
+       [1]  1  2  3  4  5  6  7  8  9 10
+       [1]  1  2  3  4  5  6  7  8  9 10
+      #+end_example
+***** Exercise:
+      Change the above so that it prints on the individual number each time it goes through the loop. 
+
+***** For Class Exercise
+      We will repeat the same exercise we did in Python, but using R this time. 
+      1. Create a list of at least 8 individual characters.
+      2. Make sure they are **not** in alphabetical order
+      3. Print the letters one at a time.
+      4. Print the letters sorted alphabetically one at a time, but /do not/ overwrite your original list.
+      5. Print the letters from both lists with a format command that says which position the letter is in. String formatting is less nice in R. Check out ~paste~ and ~sprintf~. For /help/ try ~?<commandname>~.
+
+      #+Name: Loop Exercise R
+      #+begin_src R :exports both :results output :session *R363*
+        myName = "brittAnderson"
+        myList = unlist(strsplit(b,""))
+
+        for (l in myList){
+          print(l)
+        }
+
+
+
+        for (l in myList[order(myList)]){
+          print(l)
+        }
+
+        i = 1
+        for (n in order(myList)){
+          t  <- sprintf("The %.0fth letter of myList is: %s, but is %s in the sorted list.",i,myList[i],myList[n])
+          print(t)
+          i = i+1  
+          }
+      #+end_src
+
+      #+RESULTS: Loop Exercise R
+      #+begin_example
+
+      [1] "b"
+      [1] "r"
+      [1] "i"
+      [1] "t"
+      [1] "t"
+      [1] "a"
+      [1] "n"
+      [1] "d"
+      [1] "e"
+      [1] "r"
+      [1] "s"
+      [1] "o"
+      [1] "n"
+
+      [1] "a"
+      [1] "b"
+      [1] "d"
+      [1] "e"
+      [1] "i"
+      [1] "n"
+      [1] "n"
+      [1] "o"
+      [1] "r"
+      [1] "r"
+      [1] "s"
+      [1] "t"
+      [1] "t"
+
+      [1] "The 1th letter of myList is: b, but is a in the sorted list."
+      [1] "The 2th letter of myList is: r, but is b in the sorted list."
+      [1] "The 3th letter of myList is: i, but is d in the sorted list."
+      [1] "The 4th letter of myList is: t, but is e in the sorted list."
+      [1] "The 5th letter of myList is: t, but is i in the sorted list."
+      [1] "The 6th letter of myList is: a, but is n in the sorted list."
+      [1] "The 7th letter of myList is: n, but is n in the sorted list."
+      [1] "The 8th letter of myList is: d, but is o in the sorted list."
+      [1] "The 9th letter of myList is: e, but is r in the sorted list."
+      [1] "The 10th letter of myList is: r, but is r in the sorted list."
+      [1] "The 11th letter of myList is: s, but is s in the sorted list."
+      [1] "The 12th letter of myList is: o, but is t in the sorted list."
+      [1] "The 13th letter of myList is: n, but is t in the sorted list."
+      #+end_example
+
+**** While
+***** Conditionals
+      #+begin_src R :exports code  :session *R363* :results output
+                if (2 == 3) {
+                    print("Wha.....?\n\n")
+                } else if (3 == 2) {
+                  print("Now that is odd")
+                } else {
+                  print("2 does not equal 3.")
+                }
+      #+end_src
+
+      #+RESULTS:
+      : 
+      : [1] "2 does not equal 3."
+***** While (again)
+      #+begin_src R :exports both :session *R363* :results output
+                i = 0
+                while (i<=10) {
+                  print(unlist(strsplit("brittAnderson",""))[i])
+                  i = i+1
+                }
+          #+end_src
+
+          #+RESULTS:
+          #+begin_example
+
+          character(0)
+          [1] "b"
+          [1] "r"
+          [1] "i"
+          [1] "t"
+          [1] "t"
+          [1] "A"
+          [1] "n"
+          [1] "d"
+          [1] "e"
+          [1] "r"
+          #+end_example
+
+
+*** Functions
+ #+begin_src R :exports code  :session *R363*
+   myadd  <- function(x,y) {
+     return(x+y)
+     }
+ #+end_src
+
+ #+RESULTS:
+
+ #+begin_src R :exports both :results output :session *R363*
+ myadd(2,3)
+ #+end_src
+
+ #+RESULTS:
+ : [1] 5
+
+**** Class Exercise with Functions :homework:
+     You will be required to turn this in, but you can get started now. 
+     1. Look up how to get user input from python on the command line.
+     2. Write a script that I will run on the command line thus:
+        ~python functionHW.py~
+     3. Your script should ask me to enter a word.
+     4. It will then print out the word.
+     5. Print out the sorted version one character at a time.
+     6. Ask me if I want to do it again (y/n). If 'y', repeat, and continue repeating until I answer 'n'.
+*** Libraries for R:classdiscussion:
+    #+Name: Installing Packages in R
+    #+Caption: Package Installation Commands in R. Note the use of quotes differs.
+    #+begin_src R :session *R363* :export code :eval never
+    install.packages("data.table")
+    install.packages("ggplot2")
+    library(data.table)
+    library(ggplot2)
+    #+end_src
+**** What are some popular libraries? :classactivity:homework:
+     [[https://pythontips.com/2013/07/30/20-python-libraries-you-cant-live-without/][Here]] are 20 recommended ones.
+     
+     Of particular note for us are:
+     1. knitr
+     2. ggplot2
+     3. data.table
+     4. magrittr
+     5. devtools/githubinstall
+
+     Divide class into small groups. Assign a library. Have them present to us what it is good for, and maybe a short demo. 
+     
+     Homework: Submit a short .R script to the class github repo that demonstrates the importation of your library and some basic use. 
+*** Programs
+    Nothing else really, but the more prolonged and complicated concatenation of the above. 
+*** Debugging and Basic Working Methods
+    The most basic is just to ~print~ statements into your code so that you can see what happening and whether your variables are actually what you think they should be. 
+*** IDEs
+**** Vanilla Emacs
+
+      1. Open up a blank file with a name that ends in .R
+      2. Type in some lines (e.g. a = 2, b = 3, print(a+b))
+      3. Type C-c C-c on the first line.
+      4. Read the error message
+      5. Fix it.
+      6. Keep C-c C-c'ing on each line and look at what is happening in your console.
+      7. An easier way to get and maintain your emacs package is "use-package". See some instructions [[https://elpy.readthedocs.io/en/latest/introduction.html#overview][here]].
+**** Babel Mode
+
+     1. Open a file with the name <something>.org
+     2. Type in some text
+     3. Open a source block 
+        #+begin_src org :eval never :export code
+        #+begin_src R
+        a = 2
+        b = 3
+        print(a+b)
+        ,#+end_src
+        #+end_src
+     4. Type ~C-c C-e h h~. That is four different key presses.
+     5. You just generated a web page. View it in your browser.
+     6. Now combine it with python by adding another source block below that uses the python language.
+     7. For help google emacs orgmode babel
+**** Install RStudio :classactivity:
+
+     Basic Steps:
+     1. Update your repository
+     2. Install R base
+     3. Use wget to install the *.deb* package for our version of Ubuntu from the RStudio downloads page.
+     4. run =sudo dpkg -i <PACKAGENAME>=
+     5. try launching ~rstudio~
+
+     Why use RStudio instead of Emacs (or anything else)?
+     
+     One reason is the fact that it is becoming quite common so it mostly works out of the box. 
+     
+     A downside is that out-of-the-box performance comes with a loss of flexibility and adapatability on your part and a bias to the authors' choices of preferred packages. You also return to the "gui" click an icon usage. These are two habits you are trying to break.
 ** Session 6
+*** Data handling in R
+    
 *** Data handling in Python
 ** Session 7
 *** Interaction Plots
@@ -680,9 +994,20 @@ TODO IAMHERE Replicate some of the python exercises with R to show how similar t
 ** Session 9
 *** Writing a simple report
 *** Mixing Code and Text for reproducibility
-** Session 10
+*** Start the experimental coding here and continue this week, because the next session will be for running the experiments. 
+** Session 10 
+   These last three sessions are generally open with the idea that students will 
+   1. Code up an experiment in Psychopy (e.g. stroop or reaction time or simple associative memory task).
+   2. They will collect data on their classmates
+   3. They will write up a report on their experience that includes the source code and simple data analyses.
+   4. They will include some references to pertinent literature.
+   5. They will do this using a reproducible mechanism providing both the raw file and the processed file (pdf preferred, html acceptable. 
 ** Session 11
+   Data collection.
 ** Session 12
+   Presentation. Should be able to produce an html 5 slide show of some of the motivation/method/data with graphics.
+
+   Can also work on final report and technical questions. The final report will have a later due date. 
 
 
 
