@@ -523,7 +523,7 @@
       : 2 does not equal 3.
 ***** While
       NB: note the use of colon (:) at the end of the =for= and =while= lines. 
-      #+begin_src python :exports both :session *pythonPractice: :results output
+      #+begin_src python :exports both :session *pythonPractice*y :results output
         i = 0
         while (i<=10):
             print("brittAnderson"[i])
@@ -981,30 +981,121 @@
      One reason is the fact that it is becoming quite common so it mostly works out of the box. 
      
      A downside is that out-of-the-box performance comes with a loss of flexibility and adapatability on your part and a bias to the authors' choices of preferred packages. You also return to the "gui" click an icon usage. These are two habits you are trying to break.
-** Session 6
+** Session 6 Data Handling
 *** Data handling in R
-    
+**** Getting your data into R :classdiscussion:
+     1. First get some data.
+        If you do not have your own data from a prior project you can get some from here (what follows use the HSQ dataset): 
+        https://openpsychometrics.org/_rawdata/
+        1. You have just downloaded  a zip file. Now what?
+        2. Unzip it.
+           - First option (command line): navigate to your download directory and then use command ~unzip~
+           - Second option (emacs): navigate to your download directory (~C-x d~) and then put cursor on file and type ~Z~. 
+     2. What is *csv*? How does it differ from Excel (xlsx)? Which is better? What about SPSS, SAS ...
+     3. R uses a ~read~ command with many variants. There are extra libraries for other formats. Here we focus on csv. I downloaded the /HSQ/ dataset. 
+        #+begin_src R :session *R363* :exports code :results none
+          d <- read.csv("./HSQ/HSQ/data.csv")
+        #+end_src
+     4. Reading is different from ~load~. How? Check the help.
+     5. Note the assignment to a variable for the reading?
+     6. What are the optional arguments to ~read.csv~ and why would you use them.
+     7. Explore the data?
+        1. Use ~ls()~ to see the list of names of variables in your "workspace."
+        2. Use ~names(d)~ (the /d/ is the name of your variable of interest) to see the column names?
+        3. How would you find out the number of rows?
+        4. Display the first and third rows.
+        5. Do the same but limit to the age and gender columns.
+        6. How many participants of each gender? I am using data.frame format here.
+           #+begin_src R :session *R363* :exports both :results replace
+             with(d,tapply(age,gender,length))
+           #+end_src
+
+           #+RESULTS:
+           |   5 |
+           | 581 |
+           | 477 |
+           |   8 |
+        7. Why do we have four rows?
+        8. Always inspect your data
+           #+begin_src R :session *R363* :exports both
+             unique(d$gender)
+           #+end_src
+
+           #+RESULTS:
+           | 2 |
+           | 1 |
+           | 3 |
+           | 0 |
+        9. What do these mean? Inspect the codebook file. 3 is other and 0 not mentioned. Probably means no entry.
+        10. Limit your data to only self-declared men and women. Make a new data frame with just these rows. It should be 1058.
+            #+Name: Selection by Row R
+            #+Caption: Selecting the Men and Women. Explain this Line. What does ~ls()~ show now?
+            #+begin_src R :session *R363*
+              dmf <- d[d$gender %in% c(1,2),]
+              print(nrow(dmf))
+            #+end_src
+
+            #+RESULTS:
+            : 1058
+**** Class Exercise to Work with the Data
+     Come up with some exercises for class exploration
 *** Data handling in Python
-** Session 7
+**** Pandas
+     This is becoming the defacto R equivalent for Python. There are definitely libraries for reading and writing plain csv files, but they are becoming used less and less. 
+***** Getting Your Data Into Python
+      You have to import pandas to use it. 
+      #+begin_src python :session *pythonPractice* :results value
+        import pandas as pd
+        dpd = pd.read_csv("./HSQ/HSQ/data.csv")
+        dpd.columns.values
+      #+end_src
+
+      #+RESULTS:
+      | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Q14 | Q15 | Q16 | Q17 | Q18 | Q19 | Q20 | Q21 | Q22 | Q23 | Q24 | Q25 | Q26 | Q27 | Q28 | Q29 | Q30 | Q31 | Q32 | affiliative | selfenhancing | agressive | selfdefeating | age | gender | accuracy |
+***** Repeat the same inquiries as above, but with Pandas.
+      #+begin_src python :session *pythonPractice* 
+      len(dpd['Q1'])
+      #+end_src
+
+      #+RESULTS:
+      : 1071
+      
+      #+begin_src python :session *pythonPractice*
+      dpdmg = dpd.copy()
+      dpdmg = dpdmg[dpdmg['gender'].isin([1,2])]
+      len(dpdmg['Q1'])
+      #+end_src
+
+      #+RESULTS:
+      : 1058
+
+
+      What happens if you just select with ~in~? You keep the same number of rows, because you replace the ineligible data with NaNs (not a number). 
+
+
+***** Functional Styles versus Object Orientation
+      Python is an object oriented language. Pandas creates a data.frame object (intended to mimic R), but it is not the same thing, and while most of the commands are achievable in either, they are not the same. The *dot* shows you we are accessing either an attribute or a method of an object. 
+** Session 7 Plotting in Python and R
+*** General
 *** Interaction Plots
-**** Plotting in R
-** Session 8
+** Session 8 Programming Experiments
 *** Experimental Programming in Python
 **** Psychopy Library
-** Session 9
+     
+** Session 9 Report Writing
 *** Writing a simple report
 *** Mixing Code and Text for reproducibility
 *** Start the experimental coding here and continue this week, because the next session will be for running the experiments. 
-** Session 10 
+** Session 10 Coding the Experiment
    These last three sessions are generally open with the idea that students will 
    1. Code up an experiment in Psychopy (e.g. stroop or reaction time or simple associative memory task).
    2. They will collect data on their classmates
    3. They will write up a report on their experience that includes the source code and simple data analyses.
    4. They will include some references to pertinent literature.
    5. They will do this using a reproducible mechanism providing both the raw file and the processed file (pdf preferred, html acceptable. 
-** Session 11
+** Session 11 Collecting the Data
    Data collection.
-** Session 12
+** Session 12 Presentations
    Presentation. Should be able to produce an html 5 slide show of some of the motivation/method/data with graphics.
 
    Can also work on final report and technical questions. The final report will have a later due date. 

@@ -1,4 +1,4 @@
-% Created 2019-04-30 Tue 14:33
+% Created 2019-08-22 Thu 14:41
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -30,25 +30,166 @@
 \maketitle
 \tableofcontents
 
-\section{Content Outline}
-\label{sec:orge1f8bc4}
-\subsection{Machine Basics}
-\label{sec:orgf199d5d}
+\section{Course Goal:}
+\label{sec:org515a82a}
+Improve your ability to use your computer as a tool for academic activities.
+
+This leads to the following learning objectives
+\section{Learning Objectives:}
+\label{sec:org586a972}
+\begin{itemize}
+\item Learn how to install software.
+\item Learn how to work from the command line.
+\item Learn the rudiments of programming sufficient to allow further progress through self study.
+\item Learn about the use of libraries to enable programming psychological experiments.
+\item Learn how to use version control
+\item Learn how to write papers that blend code and analyses to generate reproducible research reports.      
+This includes learning
+\begin{itemize}
+\item how to use citation databases
+\item generate graphics of analyses
+\item conduct statistical analyses
+\item generate multiple output formats from a single source file.
+\end{itemize}
+\end{itemize}
+\section{Course Mechanics}
+\label{sec:org393bd2b}
+To meet the learning objectives you will need to \textbf{do} more than you listen or observe. You will also need to break old habits. That means in the beginning it will be harder to do simple things. It also means that in the future things that used to be impossible for you to do will now be possible (but they may still not be easy). Combining computer skills with with your psychology content knowledge makes you more attractive to employers and on a graduate school application. 
+
+Thus, this course will require you to use the Linux operating system (the XUbuntu flavor) and tools available within that space. Later on, after this course, if you wish to return to the world of OSX and Windows10 you will know what you are looking for, and you will have the skills necessary to make it available. 
+\section{Outline}
+\label{sec:org4a2566c}
+\subsection{Session 1 Installing Linux}
+\label{sec:orgda96e92}
+\subsubsection{Instructions for testing the Live CD and installing to USB}
+\label{sec:orgca2ae48}
+\begin{enumerate}
+\item Learn how to boot your computer from a USB. 
+\begin{itemize}
+\item Mac OSX - start the computer with option key held down
+\item Windows - may require going into the bios and enable booting usb (usually some key combo of F2 or F10 during the boot process - look for a very briefly flashed screen); followed by rebooting with a different F Key. Another option is to tell Windows to boot from recovery mode. Find the "advanced" menu of the Windows Start Up menu (look in the "recovery" section of the start-up). Select from "another device". Some devices, like Surfaces, have other key combinations.
+\item Other systems: chrome books; ipads; probably won't work.
+\item Sometimes it takes a while to figure out which of the options is the Xubuntu option. If one doesn't work, just note what it was and next time try a different one.
+\end{itemize}
+\item Run an XUbuntu Live CD
+If problems starting the use without installing option, restart, select install, and then quit from the first screen. That will usually drop you into what you need.
+\item Explore the Live USB
+\begin{enumerate}
+\item Connect to the wifi.
+\begin{enumerate}
+\item Click up/down arrow in upper right corner of screen.
+\item Select the correct options (to be demonstrated).
+\begin{itemize}
+\item Authentication: PEAP
+\item Click box no certificate required
+\item Use your full watiam address (including the stuff after @ sign usually).
+\end{itemize}
+\end{enumerate}
+\item Verify working by opening Firefox Web Browser
+\begin{enumerate}
+\item Click little icon upper left.
+\item From dropdown menu select \emph{Web Browser}.
+\item Go to \url{https://uwaterloo.ca}
+\end{enumerate}
+\item Explore some of the other programs available in the dropdown menu and under the different headings.
+\begin{enumerate}
+\item Which program is like Word for Windows?
+\item How do you take a screenshot?
+\item What is the standard email program on this version of Linux?
+\end{enumerate}
+\item Installing programs
+There is a "gui" installer, but we are going to use the package management system from the command line.
+\begin{enumerate}
+\item Open the terminal emulator
+\item type \texttt{sudo apt update}
+What does \emph{sudo} mean?
+\item Do \textbf{NOT} upgrade your old packages at this point.
+\item type \texttt{sudo apt install emacs} ; accept the defaults
+\item Leave the terminal open but drag over to the menu in the upper left corner and inspect the \emph{Development} folder. You should emacs in there. Do \textbf{not} click it. We are going to launch from the command line.
+\item Back in terminal type: \texttt{emacs \&}.
+What does the ampersand do? It lets things run in the background without freezing the terminal. If you don't know what I mean, then start without the ampersand, and then try to type another command in the terminal. Remember: if you don't know what will happen? Try it (after maybe backing up important files).
+\item Go to the emacs help menu and under the drop down options pick emacs psychotherapist. Remember it is here when you need some counselling in the first few sessions of this course.
+\end{enumerate}
+\end{enumerate}
+\item Syllabus review (short break).
+\item Problems with the live "CD". 
+Nothing is permanent. All your upgrades and installations vanish everytime you turn it off and you would have to do it all over again everytime you restart. So, I want you to install Xubuntu so that any changes you make will be persistent, but since I don't want to require you to alter your personnel machine, will will install it to a usb and you will then run your computer from this new, second, usb where the changes you make will persist.
+\item Install Linux XUbuntu to a second USB
+This will be the major goal of the rest of our session. Follow the prompts on the screen. Work together. Ask questions. 
+
+\textbf{\textbf{Where you need to be careful}}
+
+When you are picking where to install the system you need to make sure to pick the new USB location. It will probably be /dev/sd<something or other>. If you pick the wrong device you will install it in place of your current operating system. Try running, from a terminal, =ls /dev/sd* = without the usb in place. Then plug in the USB and note the new appearance of the another \texttt{/dev/sd<something>}. 
+
+When you pick where to install the \emph{bootloader} make sure you also pick the USB or you may have trouble booting into your old system the way you are used too.
+\item When you think you are done, shut things down. Remove the live USB/CD, but leave the other one in place. Follow the steps you need to to boot your computer from a USB. If you are able to launch Ubuntu (and it might take a few tries to find the right menu entry) then you will see linux start. Enjoy the feeling of immense power.
+\item Boot your computer from the \emph{new} USB and install \textbf{emacs} \emph{from the command line} again.
+\begin{enumerate}
+\item The command line - open up a "terminal". Your terminal will be running a "shell."
+\item Package Managers
+\begin{enumerate}
+\item The ubuntu package manager
+Basic commands: 
+\begin{itemize}
+\item apt update
+\item apt install
+\item apt search
+\item apt remove
+\end{itemize}
+\end{enumerate}
+\end{enumerate}
+\item This time you might want to update those old programs.
+\end{enumerate}
+\subsubsection{Troubleshooting}
+\label{sec:orgf1d6d3d}
+\begin{description}
+\item[{I don't have a USB port?}] Do you have an sdcard port? Yes? You can use that. If you have neither you will need a different computer. It can be a cheap (as in the price of textbook cheap) and old one.
+\item[{I only have one USB port.}] Can you work with a neighbor to repeat the installation instructions on a second USB that you can use on your machine? If not, you may need something like this. 
+\url{https://images-na.ssl-images-amazon.com/images/I/81j1TYALbYL.\_SL1500\_.jpg}
+\item[{Can I just install Linux on my computer?}] You certainly can, and you can even keep you "old" operating system and use one or the other as you choose. But this seemed more than I could require of all students, but I encourage you to do it if you are willing. First, \textbf{\textbf{back up everything}} because trying this and getting it wrong could cause you to lose all your saved information.
+\item[{I already use Linux.}] Good for you. Help a classmate.
+\item[{What is Linux?}] Check wikipedia.
+\item[{Why use Xubuntu?}] Is it different from Ubuntu (Debian, Arch, Fedora, OpenSuse\ldots{})? Linux is a kernel that powers the system. All the rest are different choices people make of the tools they want to wrap around that "engine." XUbuntu is a reasonably light-weight linux distribution that runs well on slow machines, and yet has enough of a user base to make it reasonably easy to find help on line.
+\end{description}
+\subsubsection{Homework}
+\label{sec:org46a1b55}
+\begin{enumerate}
+\item Send me a screenshot of emacs open and running on your laptop.
+Hints: look for xfce4-screenshooter to take the screenshot. Log on to \emph{Learn} while running linux. Of course that will require you to connect to the internet, and that will require you repeating those steps to configure the connection.
+\item Look at the available software applications and download one (1). Don't go crazy on this. You are running your whole computer from a small usb, it will already be slow, and you will already be limited for space. Just find one program (look for "software" in the upper left corner icon drop down menu) that strikes you as cool or interesting and install it, play with it, and write a one-paragraph description of it using this format:
+
+\begin{verbatim}
+* Package Name
+  My Package
+** Short Description
+   A package for something.
+** Review
+   I liked it because ... and so on.
+\end{verbatim}
+
+Save it with yourlastname-firstname\textsubscript{pkgname.org} as the file name. Upload it to the dropbox on learn. And save it, because you will need it again soon. 
+
+Use the program "mousepad" for the above.
+\end{enumerate}
+\subsection{Session 2 Command Line Basics and EMACS Introduction}
+\label{sec:orgc22b06a}
 \subsubsection{Command Line}
-\label{sec:org6c542eb}
+\label{sec:orgd920845}
 \begin{enumerate}
 \item What is it?
-\label{sec:orgd1759e7}
+\label{sec:org12be98d}
 \item Why use it? \href{https://www.quora.com/How-important-is-it-to-learn-command-line-interfaces/answers/1620528}{One opinion.}
-\label{sec:org84d063c}
-\item Find another
-\label{sec:org149e411}
+\label{sec:org65b9f0b}
+\begin{enumerate}
+\item The \href{http://write.flossmanuals.net/command-line/introduction/}{Manual}
+\label{sec:org3ec536d}
+\end{enumerate}
 \item Find your terminal?
-\label{sec:org116214b}
+\label{sec:orgd7e990d}
 Why is it called the terminal?
 \begin{enumerate}
 \item Operating Systems
-\label{sec:org45b185a}
+\label{sec:org0fb409b}
 \begin{itemize}
 \item Windows
 \begin{itemize}
@@ -68,76 +209,659 @@ graphical tools.
 \item Why don't you have to install a virtual machine to get linux commands on OSX?
 \end{itemize}
 \item Linux 
-Ubuntu recommended; Archlinux is what I use. 
 \begin{itemize}
 \item probably xterm
 \end{itemize}
 \end{itemize}
 \end{enumerate}
 \item Terminal Games
-\label{sec:orga0146dc}
+\label{sec:org9a604c1}
 \begin{enumerate}
+\item \texttt{ls -la /home/<username>}
+\begin{itemize}
+\item What does all this output mean?
+\item What changes when you leave out the \texttt{-la}?
+\item What does the hyphen do?
+\end{itemize}
 \item Find the location of your Desktop folder.
 \item Change to that directory.
+\texttt{cd}
+\item Find out where you are?
+\texttt{pwd}
 \item Find out how much free space you have on your computer disk.
-\end{enumerate}
-\end{enumerate}
-\subsubsection{{\bfseries\sffamily TODO} test windows virtual machine and wsl installation}
-\label{sec:orgeecb45a}
-\subsubsection{Installing Software}
-\label{sec:orga14ff86}
+\texttt{df -h}
+\item How do you get help for most of these commands?
+Usually \texttt{command -{}-help} or (\texttt{-h})
+\item How do you find the manual?
+\texttt{man ls}
+\item Navigating
 \begin{enumerate}
-\item Emacs - you are going to need this; seriously.
-\label{sec:org7236ab4}
-\begin{itemize}
-\item \href{https://www.gnu.org/software/emacs/download.html}{how to install}
-\item Windows
-\begin{itemize}
-\item \href{http://ftpmirror.gnu.org/emacs/windows}{where to get}
-\end{itemize}
-\item OSX
-\begin{itemize}
-\item use \href{https://brew.sh/}{homebrew}
-\end{itemize}
-\item Linux 
-\begin{itemize}
-\item use your package manager
-\end{itemize}
-\end{itemize}
-\item R
-\label{sec:org28506ae}
-\href{http://cran.utstat.utoronto.ca/}{Download R site} Instructions for all operating systems
-\item Python
-\label{sec:org846d0ce}
-\href{https://www.python.org/downloads/}{Python 3 Download All OSs}
-\item \LaTeX{}
-\label{sec:org079bbe7}
-\href{https://www.latex-project.org/get/}{Latex download page}
+\item Paths: absolute and relative.
+\item What do those "dots" mean?
+\item What do those slashes mean?
+\item Tab is your friend.
+\item Try the up arrow too.
+\end{enumerate}
+\item File ownership
+\begin{enumerate}
+\item Make a text file from the command line.
+\texttt{touch /home/yourname/Documents/testText.txt}
+\item Who owns it?
+\end{enumerate}
+\item Make a directory
+\texttt{mkdir /home/britt/Documents/myFirstDir/}
 
-Recommend Miktex for Windows users not using a linux virtual machine
+Spaces are the enemy. Never use them, but if you have to, escape (\texttt{\textbackslash{}}) them.
+\item Want more practice? Try the tutorials \href{https://ryanstutorials.net/linuxtutorial/commandline.php}{here}.
 \end{enumerate}
-\subsubsection{Version Control}
-\label{sec:org2028ea6}
-\begin{enumerate}
-\item Git
-\label{sec:orgcbd73a7}
-\textbf{\textbf{Not}} the same as Github, though that is one of the more common \emph{social} uses of git for sharing and collaborating on code. 
-\item Installation of Git
-\label{sec:org2108366}
-\begin{itemize}
-\item seriously recommend \href{https://gitforwindows.org/}{Windows users} use it through the command line (BASH).
-\end{itemize}
 \end{enumerate}
-\subsubsection{Exercises Emacs/R/Python/Git}
-\label{sec:org9da99a3}
+\subsubsection{Exercises Emacs}
+\label{sec:orgf8a5d61}
 \begin{enumerate}
 \item Emacs
-\label{sec:org8c307f6}
+\label{sec:org9f69051}
 \begin{enumerate}
-\item Tutorial Ctrl-h t (aka C-h t)
+\item What are Control and Meta used for? What keys are they?
+May depend on your keyboard and operating system. Don't like what they are? \href{https://www.x.org/releases/current/doc/man/man1/xmodmap.1.xhtml}{Remap them}.
+\item Tutorial \texttt{Ctrl-h t} (aka \texttt{C-h t})
+\item Find the Psychotherapist - you may need it.
+\item Play a game - try \texttt{M-x tetris}
+\item Init files and packages. 
+Emacs has it's own package system that allows you to greatly expand its functionality. Most of those customization are set up in your \texttt{\textasciitilde{}/.emacs.d/init.el} file. Create it if it doesn't exist. 
+You can learn more by reading the \href{emacs\#Init File}{info file}.
+A minimal init.el to get started
+
+\#+begin\textsubscript{src} elisp :eval never :exports code
+(require package)
+(package-initialize)
+(add-to-list 'package-archives '("melpa" . "\url{http://melpa.org/packages}") t)
+\#end\textsubscript{src}
 \end{enumerate}
-\item R
-\label{sec:org1cc09dd}
+
+
+\begin{enumerate}
+\item Program your editor
+\begin{enumerate}
+\item Turn off the tool bar?
+\item How? \texttt{C-h-f} will allow you to search for functions. Try the keyword menu and tab and see if you come across a likely contender (\texttt{menu-bar-showhide-tool-bar-menu-customize-disable}).
+\item Navigate to the scratch buffer. Put that function in parantheses. Move to the end. Type \texttt{C-x C-e}. Did your tool bar go away?
+\item Point is that you can heavily customize your editor. Don't worry too much about it for now.
+\end{enumerate}
+\item \href{org\#Top}{Orgmode}
+\begin{enumerate}
+\item What is it? About the best thing ever.
+\item Make an outline. Keep a calendar. Add code to your documents. Make links. Include images.
+\item Practice now:
+Where is the help, remember? \texttt{C-h i}
+Note bene: may need to get \texttt{sudo apt install emacs25-common-non-dfsg} for all the documentation. 
+\begin{enumerate}
+\item Learn to use the short cuts to open, save, and so on. That is one of the powers of the command line and similar style tools. Enhance your productivity and control.
+\item Create an outline.
+\item Create a link
+\item Insert an image
+\item Export as a web page.
+\item What would you need to export a pdf?
+Try installing \texttt{texlive-latex-recommended}. If that doesn't fix the problem go with \texttt{texlive-full}. This is big.
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\subsection{Session 3 Version Control Github and Beginning With Python}
+\label{sec:org2f2ad3a}
+\subsubsection{Version Control}
+\label{sec:orga163c6c}
+\begin{enumerate}
+\item Git
+\label{sec:org4ebbbcf}
+\textbf{\textbf{Not}} the same as Github, though that is one of the more common \emph{social} uses of git for sharing and collaborating on code. 
+\item Social Coding and Data Sharing
+\label{sec:orgc2902a4}
+A brief discussion of what is going on here.
+\begin{enumerate}
+\item OSF.io
+\label{sec:org3f952e2}
+\begin{enumerate}
+\item Sign up
+\item Find my projects
+\end{enumerate}
+\end{enumerate}
+\item Installation of Git
+\label{sec:orgb0090b4}
+\texttt{sudo apt install git}
+\item Github and Gitlab and Bitbucket and \ldots{}
+\label{sec:orgf31a41b}
+\begin{enumerate}
+\item Github is the big one with a large external presence.
+\begin{enumerate}
+\item Sign-up
+\end{enumerate}
+\item The university provides you with a gitlab presence at \url{https://git.uwaterloo.ca}
+\end{enumerate}
+\item Git
+\label{sec:orgfbb6e5a}
+\begin{enumerate}
+\item Open a terminal
+\item Move (\texttt{cd} or \texttt{dir}) into your Desktop
+\item type \texttt{git init myrepo}
+\item Should see message from the terminal prompt that it has been created.
+\item Feel free to delete (e.g. \texttt{rm -rf ./myrepo})
+\end{enumerate}
+\item Making and Cloning a Course Repo
+\label{sec:org3b21487}
+\begin{enumerate}
+\item I create an empty repository on github
+\item I create a repository on my laptop.
+\item I add some small file.
+\item I set the upstream (origin) as the github site, and then I push.
+\item Now if I use a different computer I can push and pull (to be discussed) from this github site and keep everything synced together.
+\end{enumerate}
+\item Magit
+\label{sec:org890743f}
+\begin{enumerate}
+\item Emacs provides you with an interface for this called magit.
+\item To use it you will have to create an init file (and delete \textasciitilde{}/.emacs)
+Let's you discover the hidden directories.
+\item You will have to enable emacs package repositories (everyone in linux land has a package manager).
+\item You will need to install the magit package.
+\item Then it is \texttt{C-c m} or \texttt{M-x magit}
+\end{enumerate}
+\item Forks and Clones and Pull Requests\hfill{}\textsc{homework}
+\label{sec:org1e1d8c8}
+\begin{enumerate}
+\item Diagram the logic on the board.
+\item Get everyone to create a fork of the course repository
+\item Get everyone to create a local clone on their laptop
+\item Set a second upstream pointing to me.
+\item Pull from my repo to laptop.
+\item Update and accept the changes.
+\item Push this to your fork.
+\item Add a new file to your laptop version.
+\item Push this to your fork.
+\item From github generate a pull request for me. This is one of this weeks homeworks.
+\end{enumerate}
+\end{enumerate}
+\subsubsection{Beginning Python}
+\label{sec:orgab33b96}
+\begin{enumerate}
+\item Python
+\label{sec:orgf487295}
+\begin{enumerate}
+\item Test for Python in a terminal.
+\begin{itemize}
+\item open a terminal
+\item type \texttt{python -{}-version} then \texttt{enter}
+\item If you see an answer you have python. Type \texttt{python}. Note the cursor has changed.
+\item type \texttt{2 + 2 enter}
+\item Do you see 4?
+\item type \texttt{quit()} to exit.
+\item Why do you need to have the parentheses after the word quit?
+\end{itemize}
+\item If you only have version 2 try the command again with \texttt{python3 -{}-version}.
+\item If you don't have python3, get it (may want the python3-dev version; often the hyphen -dev packages will work better for you as a bleeding edge user).
+\end{enumerate}
+\item Coding - General
+\label{sec:orgbfe0e42}
+Coding - providing instructions to a computer.
+The computer only does what you tell it. 
+\item Writing Code
+\label{sec:org543aee7}
+Code files are just plain text. You can open and write them in anything, though some tools can make the writing substantially easier. Usually extensions identify a language (e.g. .py for python and .R for R). 
+\item Testing Code
+\label{sec:org9b1955f}
+\begin{enumerate}
+\item Interactive
+\label{sec:org9ab6c59}
+We already did a little of this, but let's try again.
+\begin{verbatim}
+def myadd(a,b):
+    return(a+b)
+\end{verbatim}
+
+\begin{verbatim}
+print(myadd(3,4))
+\end{verbatim}
+
+\begin{verbatim}
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'myadd' is not defined
+\end{verbatim}
+
+
+For interactive session it is like you are interacting with a user. You type your lines one or a few at a time, get an answer, and then decide what to do next. 
+\item Script
+\label{sec:org99a8243}
+You write a separate file that you read in, or import and use. Here is the file.
+
+def add2(a,b):
+    return(a+b)
+
+def addMany(aa):
+    ans = 0
+    for a in aa:
+        ans = ans + a
+    return(ans)
+
+\begin{verbatim}
+from code.testScript import *
+
+print(add2(3,4))
+
+print(addMany([1,2,3,4,5,6]))
+\end{verbatim}
+
+\begin{verbatim}
+7
+21
+\end{verbatim}
+
+
+Try creating this file and then typing these commands in your terminal. For various weird reasons if you want the test script to be in a subdirectory of where you are working you will need a file \texttt{\_\_init\_\_.py} to trick python into treating it as a package. See the \href{https://docs.python.org/3/tutorial/modules.html\#packages}{documentation} and this \href{https://stackoverflow.com/questions/1260792/import-a-file-from-a-subdirectory}{stackOverflow answer}.
+\end{enumerate}
+\item Confirming You Can Write and Run a Python File\hfill{}\textsc{homework}
+\label{sec:org1751a91}
+\begin{enumerate}
+\item Create a file \texttt{lastname.py}
+\item Write the myadd function I demonstrated, but give it a different name.
+\item Save.
+\item Open up a terminal.
+\item Start a python session.
+\item Import your file with you function.
+\item Use your function.
+\item Take a screenshot of your terminal session showing the above session.
+\item Submit that for your homework *along
+\end{enumerate}
+\end{enumerate}
+\subsection{Session 4 Python}
+\label{sec:org5279916}
+\subsubsection{Types}
+\label{sec:orgd23e33e}
+\begin{description}
+\item[{Integers}] 1, 2, \ldots{}
+\item[{Doubles/Floats}] 10.3, pi
+\item[{Booleans}] True , False 
+NB: some languages, e.g. R, use TRUE.
+\item Lists and Tuples
+\begin{description}
+\item[{Tuples}] (1,2), ('a',10.34,False) Have a fixed number of slots, can be different types.
+Define with parentheses
+\item[{Lists }] [1,2,3,4] Have a potentially infinite number of slots, but must all be same type.
+Define with square brackets.
+\end{description}
+\item[{Dictionaries}] \{'firstName' : 'Britt', 'lastName' : 'Anderson'\}
+\item[{Comments}] Not really code, but allows you to put stuff in your programs for other users and yourself to read. In python the lines start with a hash "\#"
+\end{description}
+\subsubsection{Constants and Variables}
+\label{sec:org5b5eaf0}
+A conceptual difference more than a implementation difference
+\begin{verbatim}
+NOHRSDAY = 24
+
+x = NOHRSDAY
+
+x
+\end{verbatim}
+
+\begin{verbatim}
+24
+\end{verbatim}
+
+\begin{enumerate}
+\item Coding styles
+\label{sec:orgf2f7e6c}
+Makes your code easier to read by people using the same language.
+
+Try to follow good programming style, and if avaialable, langugage guides.
+
+\href{https://www.python.org/dev/peps/pep-0008/}{Python Style Guide}
+\end{enumerate}
+\subsubsection{Assignment and Equality}
+\label{sec:org9a04ce6}
+\texttt{=} is different from \texttt{==}
+
+\begin{verbatim}
+a = 2
+print(a == 3)
+\end{verbatim}
+
+\begin{verbatim}
+False
+\end{verbatim}
+
+\subsubsection{Loops}
+\label{sec:org9468053}
+Think of recipes: "stir egg whites until peaked" or "simmer for 30 minutes". That is the intuition for a 
+\begin{enumerate}
+\item For
+\label{sec:orgaf87175}
+Python refers to things called "iterables." To iterate is another way of saying something you can keep doing the same thing over and over to. Imagine a bowl of ice cream. It is "eatable". You take one spoon, and keep taking spoonfuls until the bowl is empty. 
+\begin{enumerate}
+\item Indexing
+\label{sec:org4f29d62}
+You can get the location of an element in a list by referring to its \emph{index}. Indexes start at 0 for many computer languages, but not all (e.g. R and Matlab). There are various shorthands for getting ranges of elements or the last element.
+
+\begin{verbatim}
+nameDict = {'firstName' : 'Britt', 'lastName' : 'Anderson'}
+mylist = list(range(1,10))
+
+print(nameDict['firstName'])
+
+print(mylist)
+
+print(mylist[0])
+
+print(mylist[-1])
+
+print(mylist[0:4])
+\end{verbatim}
+
+\begin{verbatim}
+Britt
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+1
+9
+[1, 2, 3, 4]
+\end{verbatim}
+
+
+
+\begin{verbatim}
+for ml in mylist:
+    print(ml)
+
+
+for i,ml in enumerate(mylist):
+    print("The {0}th element was {1}".format(i,ml))
+\end{verbatim}
+
+\begin{verbatim}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+The 0th element was 1
+The 1th element was 2
+The 2th element was 3
+The 3th element was 4
+The 4th element was 5
+The 5th element was 6
+The 6th element was 7
+The 7th element was 8
+The 8th element was 9
+\end{verbatim}
+\item For Class Exercise
+\label{sec:orgda27c05}
+\begin{enumerate}
+\item Create a list of at least 8 individual characters.
+\item Make sure they are \textbf{\textbf{not}} in alphabetical order
+\item Print the letters one at a time.
+\item Print the letters sorted alphabetically one at a time, but \emph{do not} overwrite your original list.
+\item Print the letters from both lists with a format command that says which position the letter is in.
+\end{enumerate}
+
+\begin{verbatim}
+myList = list("brittAnderson")
+for l in myList:
+    print(l)
+print("end of list 1\n")
+
+
+for l in sorted(myList):
+    print(l)
+print("end of list 2\n")
+
+
+for i,l in enumerate(zip(myList,sorted(myList))):
+    print("The {0}th letter of myList is: {1}, but is {2} in the sorted list.".format(i,l[0],l[1]))
+print("Thus ends the lesson")
+\end{verbatim}
+
+\begin{verbatim}
+b
+r
+i
+t
+t
+A
+n
+d
+e
+r
+s
+o
+n
+end of list 1
+
+A
+b
+d
+e
+i
+n
+n
+o
+r
+r
+s
+t
+t
+end of list 2
+
+The 0th letter of myList is: b, but is A in the sorted list.
+The 1th letter of myList is: r, but is b in the sorted list.
+The 2th letter of myList is: i, but is d in the sorted list.
+The 3th letter of myList is: t, but is e in the sorted list.
+The 4th letter of myList is: t, but is i in the sorted list.
+The 5th letter of myList is: A, but is n in the sorted list.
+The 6th letter of myList is: n, but is n in the sorted list.
+The 7th letter of myList is: d, but is o in the sorted list.
+The 8th letter of myList is: e, but is r in the sorted list.
+The 9th letter of myList is: r, but is r in the sorted list.
+The 10th letter of myList is: s, but is s in the sorted list.
+The 11th letter of myList is: o, but is t in the sorted list.
+The 12th letter of myList is: n, but is t in the sorted list.
+Thus ends the lesson
+\end{verbatim}
+\end{enumerate}
+
+\item While
+\label{sec:org92099dc}
+These are like for loops in that they do stuff over and over, but unlike for loops they do things indefinitely, until that is, you tell them to stop. How do you do that? You use a predicate that they test for each time through the loop. That means you need to specify a \emph{predicate.}
+\begin{enumerate}
+\item Conditionals
+\label{sec:orgdbb4874}
+This is where you test whether something is or is not \texttt{True}. Note that Python, but not all computer languages, treats 0 as the same as False, and all non-zero values as True. 
+
+\begin{verbatim}
+if (2 == 3):
+    print("Wha.....?\n\n")
+elif (3 == 2):
+    print("Now that is odd")
+else:
+    print("2 does not equal 3.")
+\end{verbatim}
+\item While
+\label{sec:org9d6e48f}
+NB: note the use of colon (:) at the end of the \texttt{for} and \texttt{while} lines. 
+\begin{verbatim}
+i = 0
+while (i<=10):
+    print("brittAnderson"[i])
+    i = i+1
+\end{verbatim}
+
+\begin{verbatim}
+Python 3.7.4 (default, Jul 16 2019, 07:12:58) 
+[GCC 9.1.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+b
+r
+i
+t
+t
+A
+n
+d
+e
+r
+s
+python.el: native completion setup loaded
+\end{verbatim}
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection{Functions}
+\label{sec:org186699c}
+You have seen an example of this before. Think of a function as a machine that grinds meat. You pour in a cow. You get out hamburger. Input. Output. Note that arguments are "local". They are not referring to variables outside, in the program globally, but only make sense locally in the function. You drop values into those slots, and they you can use those names  in your function, because until you use it, your function doesn't know what it will be getting. 
+\begin{verbatim}
+def myadd(x,y):
+   return(x+y)
+\end{verbatim}
+
+\begin{verbatim}
+myadd(2,3)
+\end{verbatim}
+
+\begin{verbatim}
+5
+\end{verbatim}
+
+\begin{enumerate}
+\item Class Exercise with Functions\hfill{}\textsc{homework}
+\label{sec:org6930e0b}
+You will be required to turn this in, but you can get started now. 
+\begin{enumerate}
+\item Look up how to get user input from python on the command line.
+\item Write a script that I will run on the command line thus:
+\texttt{python functionHW.py}
+\item Your script should ask me to enter a word.
+\item It will then print out the word.
+\item Print out the sorted version one character at a time.
+\item Ask me if I want to do it again (y/n). If 'y', repeat, and continue repeating until I answer 'n'.
+\end{enumerate}
+\end{enumerate}
+\subsubsection{Libraries\hfill{}\textsc{classdiscussion}}
+\label{sec:org96e0a97}
+Lots of people use python. If you can think that someone ought to have done \ldots{} they probably have. Use libraries whenever you can, because \ldots{} discussion points. 
+\begin{enumerate}
+\item What are some popular libraries?\hfill{}\textsc{classactivity:homework}
+\label{sec:orgad74ad0}
+\href{https://pythontips.com/2013/07/30/20-python-libraries-you-cant-live-without/}{Here} are 20 recommended ones.
+
+Of particular note for us are:
+\begin{enumerate}
+\item Numpy
+\item Scipy
+\item Matplotlib
+\item Pillow
+\item Sympy
+\end{enumerate}
+
+Divide class into small groups. Assign a library. Have them present to us what it is good for, and maybe a short demo. 
+
+Homework: Submit a short .py script to the class github repo that demonstrates the importation of your library and some basic use.
+\end{enumerate}
+\subsubsection{Programs}
+\label{sec:org9dbd16f}
+Nothing else really, but the more prolonged and complicated concatenation of the above. 
+\subsubsection{Debugging and Basic Working Methods}
+\label{sec:orgd1c28cf}
+The most basic is just to \texttt{print} statements into your code so that you can see what happening and whether your variables are actually what you think they should be. 
+\subsubsection{IDEs}
+\label{sec:orgab9eb8e}
+What does IDE stand for?
+
+What are common IDEs for python and how do you get them. What are they good for. 
+
+Two popular ones are:
+\begin{enumerate}
+\item Spyder
+\item pyCharm
+\end{enumerate}
+
+This is what you need to use for this course: emacs.
+\begin{enumerate}
+\item Open up a blank file with a name that ends in .py
+\item Type in some lines (e.g. a = 2, b = 3, print(a+b))
+\item Type C-c C-c on the first line.
+\item Read the error message
+\item Fix it.
+\item Keep C-c C-c'ing on each line and look at what is happening in your console.
+\item When your cursor is on a python word, like \texttt{print}, look in the mode line.
+\item Try M-x linum-mode
+\item To see some fancier stuff install the \texttt{elpy} package for emacs.
+\begin{enumerate}
+\item M-x package-list-packages
+\item C-s elpy
+\item type "i"
+\item type "x"
+\end{enumerate}
+\item An easier way to get and maintain your emacs package is "use-package". See some instructions \href{https://elpy.readthedocs.io/en/latest/introduction.html\#overview}{here}.
+\item When you try \texttt{(elpy-enable)} you will get error messages. Why? You don't have all the dependencies.
+\item Uninstall elpy (go to that list and hit 'd' on the elpy package).
+\item Follow instructions \href{https://github.com/jorgenschaefer/elpy}{here} to see what python packages you need and install them.
+\item What no pip? Welcome to the world of using your computer (and dependency hell). 
+\begin{verbatim}
+sudo apt install python-pip
+pip install jedi rope flake8 autopep8 yapf black
+\end{verbatim}
+\item Then reinstall elpy. Whoooo - wipes brow.
+\item No! Needs to be for python3. Repeat all the above for python3 and then customize your emacs python shell command like this
+\begin{verbatim}
+M-x customize-variable python-shell-interpreter
+\end{verbatim}
+\item Check out the elpy \href{https://elpy.readthedocs.io/en/latest/introduction.html\#overview}{documentation}. Lots of cool features to make your programming easier.
+\end{enumerate}
+
+Why do you have to do all this? Because Mama a'int spoon feeding you anymore boys and girls. 
+
+\subsubsection{Pip to Install Libraries and Virtual Environments}
+\label{sec:org314da1d}
+\begin{enumerate}
+\item Pip
+\label{sec:org8aa03ed}
+pip is the python install package program. There have been many ways to install python packages over the years and you will find a lot of tracks on the internet. There is a new system coming called wheel, but for now stick with pip (ubuntu also has many of these packages, but I find it better to try and not to mix package managers. Use your choice; mine is pip.
+\item Virtual Environments
+\label{sec:orgc9edf08}
+You have system installations of things (like python and its libraries). Now you need to install something new for development purposes. You don't want different version of the same program clashing. The solution is to install your development version of libraries in a "virtual" environment. That is you trick your machine into thinking that a different directory is the root of everything, and thus it can install locally without disturbing your other system files. There are various subtle variations of this arrangement that may be important for different scenarios and use cases. There is also more than one virtual environment tool out there. We will be using and testing the built-in one. 
+\begin{enumerate}
+\item {\bfseries\sffamily TODO} VENV
+\label{sec:org3deb531}
+\begin{enumerate}
+\item \href{https://docs.python.org/3/library/venv.html}{Link} to the python description page
+\item Creating a venv and downloading \href{https://www.psychopy.org/about/index.html}{Psychopy} (to be used later in the course).
+\begin{enumerate}
+\item First create a directory where you will store/keep your psychopy installation. Maybe something like:
+\texttt{mkdir /home/britt/research/psychopy/}
+\item change to that directory
+\item make sure you have installed the venv module. For our XUbuntu version that is \texttt{sudo apt install python3-venv}
+\item \texttt{python3 -m venv /home/britt/research/psychopy}
+Note this is just the name of my directory. Yours will be named differently.
+\item Then you "activate" this virtual environment for the correct installation.
+\texttt{source /home/britt/research/psychopy/bin/activate}
+\item Note the change in the prompt from your terminal
+\item Now try to install psychopy with
+\texttt{pip install psychopy}
+\item This will pull in  a lot of files. Be patient.
+\item We will need (according to the \href{https://www.psychopy.org/download.html\#download}{psychopy download} page wxPython [a library for making gui's]).
+\item Install pygame (inside the virtualenv with pip)
+\item Then edit the file <venv>/lib/python/site-packages/psychopy/demos/coder/stimuli/face\textsubscript{jpg.py} to add ",winType = 'pygame')" to the function that creates the window.
+\item The run python <path>/face\textsubscript{jpg.py}
+NB: I am having trouble getting pyglet windows to work, but pygame seems fine. (pip uninstall pyglet; then pip install pyglet==1.3)
+\item For an exercise, have them get cheese and change out the picture to use their own face? Maybe use gimp or inkscape to select the face and make rest transparent? \textbf{\textbf{TODO}}
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\subsection{Session 5 R}
+\label{sec:org61dea7c}
+\subsubsection{R}
+\label{sec:org0c17fac}
 \begin{enumerate}
 \item Test for R from a terminal.
 \begin{itemize}
@@ -152,86 +876,209 @@ Recommend Miktex for Windows users not using a linux virtual machine
 \item \texttt{M-x R}
 \end{itemize}
 \end{enumerate}
-\item Python
-\label{sec:orgbcc6318}
-\begin{enumerate}
-\item Test for Python in a terminal.
-\begin{itemize}
-\item open a terminal
-\item type \texttt{python} then \texttt{enter}
-\item type \texttt{2 + 2 enter}
-\item Do you see 4?
-\item type \texttt{quit()} to exit.
-\item Why do you need to have the parentheses after the word quit?
-\end{itemize}
-\end{enumerate}
-\begin{enumerate}
-\item Git
-\label{sec:org517dbc8}
-\begin{enumerate}
-\item Open a terminal
-\item Move (\texttt{cd} or \texttt{dir}) into your Desktop
-\item type \texttt{git init myrepo}
-\item Should see message from the terminal prompt that it has been created.
-\item Feel free to delete (e.g. \texttt{rm -rf ./myrepo})
-\end{enumerate}
-\end{enumerate}
-\end{enumerate}
-\subsection{Coding Basics}
-\label{sec:orgdc1e6cd}
-\subsubsection{Coding - General}
-\label{sec:orgce59498}
-\subsubsection{Writing Code}
-\label{sec:org9ef234f}
-\subsubsection{Testing Code}
-\label{sec:org86cea51}
-\begin{enumerate}
-\item Interactive
-\label{sec:org220085e}
-\item Script
-\label{sec:orga233ad6}
-\end{enumerate}
-\subsubsection{Coding basics}
-\label{sec:org507779c}
+\subsubsection{R Coding Basics - compare}
+\label{sec:orgb13e9b0}
 \subsubsection{Types}
-\label{sec:orge406378}
-\begin{itemize}
-\item Integers
-\item Doubles/Floats
-\item Booleans
-\item Lists and Tuples
-\item Dictionaries
-\end{itemize}
-\subsubsection{Constants and Variables}
-\label{sec:orgae493da}
+\label{sec:orgbc64423}
+R has many of the same types, but also makes much greater use of lists where there are names and elements (rather like a python dictionary). Many built-in statistical functions will return S3 or S4 objects. The point isn't to know what they are, as to know that there are special types in R that have special handling in R.
+
+\begin{verbatim}
+a = 1
+typeof(a)
+\end{verbatim}
+\captionof{figure}{\label{org3b4fc95}
+Use the function \texttt{typeof} in R to determine the datatype of a variable.}
+
+\begin{verbatim}
+double
+\end{verbatim}
+
+
+\begin{verbatim}
+tpl = c(1,2)
+lst = list("firstName" = 'Britt', "lastName" = 'Anderson')
+df = data.frame('fn' = c("bob","jane","griffin"),"gndr" = c('m','f','o'))
+df
+\end{verbatim}
+\captionof{figure}{\label{orgbf5cfab}
+Lists, Tuples, Data.Frames and Data.Tables}
+
+
+You can think of \texttt{data.frames} as sort of like spread sheets. But they are much handier. For example:
+\subsubsection{Data Selection in R\hfill{}\textsc{classactivity}}
+\label{sec:orgf54fc90}
+\begin{enumerate}
+\item Open up Emacs.
+\item Type \texttt{M-x R}
+\item You should see an R environment appear.
+\item Try it with \texttt{2+2} followed by <enter>.
+\item Now type \texttt{cars}.
+\item Is \texttt{cars} a data.frame?
+\begin{verbatim}
+is.data.frame(cars)
+\end{verbatim}
+\item How many cars are there that can go faster than 10, but not more than 20?
+\begin{verbatim}
+length(cars$dist[cars$speed > 10 & cars$speed < 20])
+\end{verbatim}
+\item Can you do that easily in Excel?
+\item Questions for you to explore:
+\begin{enumerate}
+\item Sort (or \texttt{order}) cars by the \texttt{dist} variable.
+\item Find the mean and standard deviation of the speed of the cars.
+\item Are there other datasets?
+\begin{verbatim}
+library(help="datasets")
+\end{verbatim}
+\item Open any of the datasets that catches your eye.
+\item What are the column names?
+\item How many rows?
+\item What is the \emph{comment} designator for R?
+\item What is the ending extension of an R script?
+\end{enumerate}
+\end{enumerate}
+
 \subsubsection{Assignment and Equality}
-\label{sec:org6646e58}
+\label{sec:orgf4bae08}
+\texttt{=} is different from \texttt{==}
+
+
 \begin{verbatim}
 a = 2
 print(a == 3)
 \end{verbatim}
 
 \begin{verbatim}
-False
+
+[1] FALSE
 \end{verbatim}
 
-\subsubsection{Data Types}
-\label{sec:orgf3b65fa}
+While some things are the same, not all the language features are identical. You can use your knowledge of one language to help you make guesses in the other, but you cannot count on the notation and syntax being identical.
 \subsubsection{Loops}
-\label{sec:orgf630c6b}
+\label{sec:org64624f7}
+This is a good example of where things are slightly different
 \begin{enumerate}
 \item For
-\label{sec:org1d13c89}
-\item While
-\label{sec:org12fde45}
-\end{enumerate}
-\subsubsection{Conditionals}
-\label{sec:orgf1da076}
-\subsubsection{Functions}
-\label{sec:orgc2bc608}
+\label{sec:orgb4d71eb}
 \begin{verbatim}
-def myadd(x,y):
-   return(x+y)
+ml = seq(1:10)
+
+for  (m in ml) {
+    print(ml)
+}
+\end{verbatim}
+
+\begin{verbatim}
+
+[1]  1  2  3  4  5  6  7  8  9 10
+[1]  1  2  3  4  5  6  7  8  9 10
+[1]  1  2  3  4  5  6  7  8  9 10
+[1]  1  2  3  4  5  6  7  8  9 10
+[1]  1  2  3  4  5  6  7  8  9 10
+[1]  1  2  3  4  5  6  7  8  9 10
+[1]  1  2  3  4  5  6  7  8  9 10
+[1]  1  2  3  4  5  6  7  8  9 10
+[1]  1  2  3  4  5  6  7  8  9 10
+[1]  1  2  3  4  5  6  7  8  9 10
+\end{verbatim}
+\begin{enumerate}
+\item Exercise:
+\label{sec:orgbebf6a9}
+Change the above so that it prints on the individual number each time it goes through the loop. 
+
+\item For Class Exercise
+\label{sec:org51d5495}
+We will repeat the same exercise we did in Python, but using R this time. 
+\begin{enumerate}
+\item Create a list of at least 8 individual characters.
+\item Make sure they are \textbf{\textbf{not}} in alphabetical order
+\item Print the letters one at a time.
+\item Print the letters sorted alphabetically one at a time, but \emph{do not} overwrite your original list.
+\item Print the letters from both lists with a format command that says which position the letter is in. String formatting is less nice in R. Check out \texttt{paste} and \texttt{sprintf}. For \emph{help} try \texttt{?<commandname>}.
+\end{enumerate}
+
+\begin{verbatim}
+myName = "brittAnderson"
+myList = unlist(strsplit(b,""))
+
+for (l in myList){
+  print(l)
+}
+
+
+
+for (l in myList[order(myList)]){
+  print(l)
+}
+
+i = 1
+for (n in order(myList)){
+  t  <- sprintf("The %.0fth letter of myList is: %s, but is %s in the sorted list.",i,myList[i],myList[n])
+  print(t)
+  i = i+1  
+  }
+\end{verbatim}
+
+\begin{verbatim}
+
+Error in strsplit(b, "") : object 'b' not found
+
+Error in myList : object 'myList' not found
+
+Error in myList : object 'myList' not found
+
+Error in order(myList) : object 'myList' not found
+\end{verbatim}
+\end{enumerate}
+
+\item While
+\label{sec:orgc69d01c}
+\begin{enumerate}
+\item Conditionals
+\label{sec:org101903d}
+\begin{verbatim}
+if (2 == 3) {
+    print("Wha.....?\n\n")
+} else if (3 == 2) {
+  print("Now that is odd")
+} else {
+  print("2 does not equal 3.")
+}
+\end{verbatim}
+\item While (again)
+\label{sec:orge6d3f1f}
+\begin{verbatim}
+i = 0
+while (i<=10) {
+  print(unlist(strsplit("brittAnderson",""))[i])
+  i = i+1
+}
+\end{verbatim}
+
+\begin{verbatim}
+
+character(0)
+[1] "b"
+[1] "r"
+[1] "i"
+[1] "t"
+[1] "t"
+[1] "A"
+[1] "n"
+[1] "d"
+[1] "e"
+[1] "r"
+\end{verbatim}
+\end{enumerate}
+\end{enumerate}
+
+
+\subsubsection{Functions}
+\label{sec:orga09341a}
+\begin{verbatim}
+myadd  <- function(x,y) {
+  return(x+y)
+  }
 \end{verbatim}
 
 \begin{verbatim}
@@ -239,48 +1086,226 @@ myadd(2,3)
 \end{verbatim}
 
 \begin{verbatim}
-5
+[1] 5
 \end{verbatim}
-\subsubsection{Interpretation and Interactivity}
-\label{sec:org6f98149}
-\subsubsection{Scripts}
-\label{sec:org8905ebb}
-\subsubsection{Libraries}
-\label{sec:org2619bd6}
-\subsubsection{Programs}
-\label{sec:org9ebdeec}
-\subsubsection{Debugging and Basic Working Methods}
-\label{sec:orgac987c1}
-\subsubsection{IDEs}
-\label{sec:orgb98c934}
-\subsection{File Handling}
-\label{sec:org68e22fb}
-\subsection{Pip to Install Libraries and Virtual Environments}
-\label{sec:orgfc261a2}
-\subsection{R Coding Basics - compare}
-\label{sec:org7b960dd}
-\subsection{Writing a simple report}
-\label{sec:org3cb7d17}
-\subsection{Mixing Code and Text for reproducibility}
-\label{sec:orgfb9eed3}
-\subsection{Data handling in R}
-\label{sec:org295817b}
-\subsection{Data handling in Python}
-\label{sec:orga1f2844}
-\subsection{Plotting in R}
-\label{sec:org3ac19d4}
-\subsubsection{Interaction Plots}
-\label{sec:orge3c6a6d}
-\subsection{Experimental Programming in Python}
-\label{sec:orgf7cd9fd}
-\subsubsection{Psychopy Library}
-\label{sec:org7ef4ed8}
-\subsection{Final Projects}
-\label{sec:org861436e}
+
 \begin{enumerate}
-\item Program a simple, even trivial, but functional program for a very simple psychological task that collects RT data from keyboard presses (e.g. a Stroop Task or a Posner Cuing Task).
-\item Collect data on classmates
-\item Use R to read in the data and generate some simple computations, e.g. the mean RT and a plot of something (e.g. conflict and no conflict conditions of the stroop subdivided by gender, glasses, haircolor). Try a boxplot or a scatter plot depending on the type of data you collected.
-\item Write a simple *.org file that includes the text and analysis and generates a simple report with at least one citation. This file should be complete. That is it should read in the data, perform the analyses, and directly format and insert the data and plots into the final document. The experimental code should be included as an appendix.
+\item Class Exercise with Functions\hfill{}\textsc{homework}
+\label{sec:org81251bb}
+You will be required to turn this in, but you can get started now. 
+\begin{enumerate}
+\item Look up how to get user input from python on the command line.
+\item Write a script that I will run on the command line thus:
+\texttt{python functionHW.py}
+\item Your script should ask me to enter a word.
+\item It will then print out the word.
+\item Print out the sorted version one character at a time.
+\item Ask me if I want to do it again (y/n). If 'y', repeat, and continue repeating until I answer 'n'.
 \end{enumerate}
+\end{enumerate}
+\subsubsection{Libraries for R:classdiscussion:}
+\label{sec:orga527ced}
+\begin{verbatim}
+install.packages("data.table")
+install.packages("ggplot2")
+library(data.table)
+library(ggplot2)
+\end{verbatim}
+\captionof{figure}{\label{org3277ae5}
+Package Installation Commands in R. Note the use of quotes differs.}
+\begin{enumerate}
+\item What are some popular libraries?\hfill{}\textsc{classactivity:homework}
+\label{sec:org9ea0cbb}
+\href{https://pythontips.com/2013/07/30/20-python-libraries-you-cant-live-without/}{Here} are 20 recommended ones.
+
+Of particular note for us are:
+\begin{enumerate}
+\item knitr
+\item ggplot2
+\item data.table
+\item magrittr
+\item devtools/githubinstall
+\end{enumerate}
+
+Divide class into small groups. Assign a library. Have them present to us what it is good for, and maybe a short demo. 
+
+Homework: Submit a short .R script to the class github repo that demonstrates the importation of your library and some basic use.
+\end{enumerate}
+\subsubsection{Programs}
+\label{sec:org743b870}
+Nothing else really, but the more prolonged and complicated concatenation of the above. 
+\subsubsection{Debugging and Basic Working Methods}
+\label{sec:orgdadfc78}
+The most basic is just to \texttt{print} statements into your code so that you can see what happening and whether your variables are actually what you think they should be. 
+\subsubsection{IDEs}
+\label{sec:orgb511a21}
+\begin{enumerate}
+\item Vanilla Emacs
+\label{sec:org4f7f747}
+
+\begin{enumerate}
+\item Open up a blank file with a name that ends in .R
+\item Type in some lines (e.g. a = 2, b = 3, print(a+b))
+\item Type C-c C-c on the first line.
+\item Read the error message
+\item Fix it.
+\item Keep C-c C-c'ing on each line and look at what is happening in your console.
+\item An easier way to get and maintain your emacs package is "use-package". See some instructions \href{https://elpy.readthedocs.io/en/latest/introduction.html\#overview}{here}.
+\end{enumerate}
+\item Babel Mode
+\label{sec:org571f25c}
+
+\begin{enumerate}
+\item Open a file with the name <something>.org
+\item Type in some text
+\item Open a source block 
+\begin{verbatim}
+#+begin_src R
+a = 2
+b = 3
+print(a+b)
+#+end_src
+\end{verbatim}
+\item Type \texttt{C-c C-e h h}. That is four different key presses.
+\item You just generated a web page. View it in your browser.
+\item Now combine it with python by adding another source block below that uses the python language.
+\item For help google emacs orgmode babel
+\end{enumerate}
+\item Install RStudio\hfill{}\textsc{classactivity}
+\label{sec:org4c3d7b1}
+
+Basic Steps:
+\begin{enumerate}
+\item Update your repository
+\item Install R base
+\item Use wget to install the \textbf{.deb} package for our version of Ubuntu from the RStudio downloads page.
+\item run \texttt{sudo dpkg -i <PACKAGENAME>}
+\item try launching \texttt{rstudio}
+\end{enumerate}
+
+Why use RStudio instead of Emacs (or anything else)?
+
+One reason is the fact that it is becoming quite common so it mostly works out of the box. 
+
+A downside is that out-of-the-box performance comes with a loss of flexibility and adapatability on your part and a bias to the authors' choices of preferred packages. You also return to the "gui" click an icon usage. These are two habits you are trying to break.
+\end{enumerate}
+\subsection{Session 6 Data Handling}
+\label{sec:org5691ce0}
+\subsubsection{Data handling in R}
+\label{sec:orgc4f079a}
+\begin{enumerate}
+\item Getting your data into R\hfill{}\textsc{classdiscussion}
+\label{sec:orgae75cab}
+\begin{enumerate}
+\item First get some data.
+If you do not have your own data from a prior project you can get some from here: 
+\url{https://openpsychometrics.org/\_rawdata/}
+\begin{enumerate}
+\item You have just downloaded  a zip file. Now what?
+\item Unzip it.
+\begin{itemize}
+\item First option (command line): navigate to your download directory and then use command \texttt{unzip}
+\item Second option (emacs): navigate to your download directory (\texttt{C-x d}) and then put cursor on file and type \texttt{Z}.
+\end{itemize}
+\end{enumerate}
+\item What is \textbf{csv}? How does it differ from Excel (xlsx)? Which is better? What about SPSS, SAS \ldots{}
+\item R uses a \texttt{read} command with many variants. There are extra libraries for other formats. Here we focus on csv. I downloaded the \emph{HSQ} dataset. 
+\begin{verbatim}
+d <- read.csv("./HSQ/HSQ/data.csv")
+\end{verbatim}
+\item Reading is different from \texttt{load}. How? Check the help.
+\item Note the assignment to a variable for the reading?
+\item What are the optional arguments to \texttt{read.csv} and why would you use them.
+\item Explore the data?
+\begin{enumerate}
+\item Use \texttt{ls()} to see the list of names of variables in your "workspace."
+\item Use \texttt{names(d)} (the \emph{d} is the name of your variable of interest) to see the column names?
+\item How would you find out the number of rows?
+\item Display the first and third rows.
+\item Do the same but limit to the age and gender columns.
+\item How many participants of each gender? I am using data.frame format here.
+\begin{verbatim}
+with(d,tapply(age,gender,length))
+\end{verbatim}
+
+\begin{center}
+\begin{tabular}{r}
+5\\
+581\\
+477\\
+8\\
+\end{tabular}
+\end{center}
+\item Why do we have four rows?
+\item Always inspect your data
+\begin{verbatim}
+unique(d$gender)
+\end{verbatim}
+\item What do these mean? Inspect the codebook file. 3 is other and 0 not mentioned. Probably means no entry.
+\item Limit your data to only self-declared men and women. Make a new data frame with just these rows. It should be 1058.
+\begin{verbatim}
+dmf <- d[d$gender %in% c(1,2),]
+print(nrow(dmf))
+\end{verbatim}
+\captionof{figure}{\label{org475d8e8}
+Selecting the Men and Women. Explain this Line. What does \texttt{ls()} show now?}
+
+\begin{verbatim}
+1058
+\end{verbatim}
+\end{enumerate}
+\end{enumerate}
+
+
+
+
+
+\item 
+\label{sec:org0d3c307}
+\end{enumerate}
+\subsubsection{Data handling in Python}
+\label{sec:org2b4d674}
+
+\subsection{Session 7 Plotting}
+\label{sec:orgdc0b9a1}
+\subsubsection{Interaction Plots}
+\label{sec:orge654130}
+\begin{enumerate}
+\item Plotting in R
+\label{sec:org0e6af7e}
+\end{enumerate}
+\subsection{Session 8 Programming Experiments}
+\label{sec:org8c32209}
+\subsubsection{Experimental Programming in Python}
+\label{sec:orgda8000e}
+\begin{enumerate}
+\item Psychopy Library
+\label{sec:org0f9fa68}
+\end{enumerate}
+\subsection{Session 9 Report Writing}
+\label{sec:org54ce56e}
+\subsubsection{Writing a simple report}
+\label{sec:orge6781c4}
+\subsubsection{Mixing Code and Text for reproducibility}
+\label{sec:orgb16b8f2}
+\subsubsection{Start the experimental coding here and continue this week, because the next session will be for running the experiments.}
+\label{sec:orga155476}
+\subsection{Session 10 Coding the Experiment}
+\label{sec:orgf3784dd}
+These last three sessions are generally open with the idea that students will 
+\begin{enumerate}
+\item Code up an experiment in Psychopy (e.g. stroop or reaction time or simple associative memory task).
+\item They will collect data on their classmates
+\item They will write up a report on their experience that includes the source code and simple data analyses.
+\item They will include some references to pertinent literature.
+\item They will do this using a reproducible mechanism providing both the raw file and the processed file (pdf preferred, html acceptable.
+\end{enumerate}
+\subsection{Session 11 Collecting the Data}
+\label{sec:orgf3a340b}
+Data collection.
+\subsection{Session 12 Presentations}
+\label{sec:orga547fed}
+Presentation. Should be able to produce an html 5 slide show of some of the motivation/method/data with graphics.
+
+Can also work on final report and technical questions. The final report will have a later due date. 
 \end{document}
