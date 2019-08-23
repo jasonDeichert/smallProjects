@@ -3,3 +3,4 @@ auto/
 venv/
 __pycache__/
 *.synctex
+.Rhistory
