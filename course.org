@@ -523,7 +523,7 @@
       : 2 does not equal 3.
 ***** While
       NB: note the use of colon (:) at the end of the =for= and =while= lines. 
-      #+begin_src python :exports both :session *P363*y :results output
+      #+begin_src python :exports both :session *P363* :results output
         i = 0
         while (i<=10):
             print("brittAnderson"[i])
