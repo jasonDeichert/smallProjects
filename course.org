@@ -189,15 +189,16 @@
      4. Play a game - try ~M-x tetris~
      5. Init files and packages. 
         Emacs has it's own package system that allows you to greatly expand its functionality. Most of those customization are set up in your =~/.emacs.d/init.el= file. Create it if it doesn't exist. 
-        You can learn more by reading the [[info:emacs#Init%20File][info file]].
-        A minimal init.el to get started
 
+        You can learn more by reading the [[info:emacs#Init%20File][info file]].
+
+        A minimal init.el to get started
+        
         #+begin_src elisp :eval never :exports code
         (require package)
         (package-initialize)
         (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages") t)
-        #end_src
-
+        #+end_src
 
      6. Program your editor
         1. Turn off the tool bar?
@@ -243,7 +244,10 @@
      2. I create a repository on my laptop.
      3. I add some small file.
      4. I set the upstream (origin) as the github site, and then I push.
-     5. Now if I use a different computer I can push and pull (to be discussed) from this github site and keep everything synced together. 
+     5. Now if I use a different computer I can push and pull (to be discussed) from this github site and keep everything synced together.
+**** Demo the Course Git Site
+     I am keeping back-ups of my notes for this course on github. You can get everything I create by cloning this repository.
+     1. Go to [[Course Repo on Github][https://github.com/brittAnderson/psych363]]
 **** Magit
      1. Emacs provides you with an interface for this called magit.
      2. To use it you will have to create an init file (and delete ~/.emacs)
@@ -282,6 +286,7 @@
 **** Testing Code
 ***** Interactive
       We already did a little of this, but let's try again.
+      
       #+begin_src python :session *P363* :export code :results silent
         def myadd(a,b):
             return(a+b)
@@ -1215,8 +1220,8 @@
      For homework I can ask them to do the opposite. Plot the points and lines in python, and the interaction plot in R. Here is a page from which I got the example that shows a solution in base R. 
      http://personality-project.org/r/r.plotregressions.html
 ** Session 8 Programming Experiments
-*** IAMHERE :noexport:
 *** Experimental Programming in Python
+    It is 
 **** Psychopy Library
      
 ** Session 9 Report Writing
