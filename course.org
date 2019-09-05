@@ -248,6 +248,8 @@
 **** Demo the Course Git Site
      I am keeping back-ups of my notes for this course on github. You can get everything I create by cloning this repository.
      1. Go to [[Course Repo on Github][https://github.com/brittAnderson/psych363]]
+     2. Use that url to clone a copy to your laptop (or to fork a version to your github account). Occassionally ~pull~ in any changes or updates.
+     3. You will probably find it easier to skip the fork step for any repository that you are just going to use, but not change. 
 **** Magit
      1. Emacs provides you with an interface for this called magit.
      2. To use it you will have to create an init file (and delete ~/.emacs)
@@ -1221,10 +1223,50 @@
      http://personality-project.org/r/r.plotregressions.html
 ** Session 8 Programming Experiments
 *** Experimental Programming in Python
-    It is 
+    The components of a typical experimental program in psychology involve some combination of showing something on a computer and getting a response from the participant. This typically means you will need some way of talking to the graphics part of the computer (to place text or images on the monitor), and some way of listening to the computer to record keyboard, button box, or mouse presses. /Listening/ for eye movements or EEG is an extension of this basic approach. 
+
+    It is possible (and sometimes more direct) to use python library that more directly address these goals, such as [[http://pyopengl.sourceforge.net/][pyopengl]] for graphics or [[https://www.pygame.org/news][pygame]] for getting joystick input, but in general never reinvent the wheel if you don't have to. As computer are common tools of psychological research there have been some excellent libraries that serve as one-stop shops for our needs. The one we will use in this course is [[https://www.psychopy.org/][psychopy]].
 **** Psychopy Library
-     
+     1. For future reference you should note that psychopy is building in increasing support for performing online studies. These extension often rely on another language, javascript. We will *not* be using these extension here, but if you master the basics you will be able to extend your use on your onw.
+     2. Resources for Psychopy.
+        1. The authors of the Psychopy library have written an entire [[https://us.sagepub.com/en-us/nam/building-experiments-in-psychopy/book253480#contents][textbook]] on using python for psychology experiments that includes the online extensions. That is a good resource to pursue things after this course.
+        2. On the psychopy website is an [[https://www.psychopy.org/coder/coder.html][introduction]] to using the coder component of psychopy.
+        3. Searching online with ~psychopy tutorial~ will get you a variety of hits. Note that you want to emphasize the ~coder~ version. Maybe the ~builder~ will meet your needs, but better to start with the ~coder~ version and use the ~builder~ for efficiency. In many cases it will be harder to build a complex experiment in the ~builder~ than by directly using the ~coder~ version.
+***** Psychopy Exercise 
+      :NeedsTesting:
+      This demo still needs testing
+:END:
+      1. Open up a terminal.
+      2. Begin a python session
+      3. ~from psychopy import visual,core~
+      4. Create a window
+         ~mywin = visual.Window(size = (640,480))~
+      5. Test it
+         ~mywin.flip()~
+      6. Why is it called /flip/?
+      7. Add a red rectangle.
+         ~myrect = visual.Rect(mywin, linewidth = 0, fillcolor = "red", size = [.2,.2],pos=[0,0],units="norm")~
+      8. Draw it
+         ~myrect.draw()~
+      9. Show it
+         ~mywin.flip()~
+      10. Clean up and shut down in an orderly way
+          ~core.quit()~
+***** Extensions
+      To work on these examples you will want to consult the [[https://www.psychopy.org/api/api.html][psychopy API]] to see what functions do what, and what the arguments are that you need to supply. 
+      1. Change the color of the square.
+      2. Move the Square.
+      3. Add some text
+      4. Keep the window open for a certain amount of time, and then close it when that time has elapsed.
+      5. Run any of the demo programs you can find in the ~.../psychopy/demo/coder/stimuli/~ directory.
+      6. Change something in the demo you are running and see what the effect is.
+         Note you may want to save the original file with a new name and hack on the one with a new name. That way it will be easier to go back to the original if you break something.
+**** Homework (can start in class)
+     1. Provide me with a name of the basic variety or example of the experiment you intend to code (with at least one reference using that task).
+     2. Provide a written (not code) outline of what you will need to do to implement the task.
+     3. Provide links to any existing versions of the task that you hope to be able to adapt for your usage. 
 ** Session 9 Report Writing
+   IAMHERE
 *** Writing a simple report
 *** Mixing Code and Text for reproducibility
 *** Start the experimental coding here and continue this week, because the next session will be for running the experiments. 
