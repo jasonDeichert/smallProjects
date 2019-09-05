@@ -1,0 +1,9 @@
+* Psych363 University of Waterloo
+
+  This repository is in support of a course to teach psychology
+  students basic tools for using their computers to support academic
+  and professional use.
+
+  The ~course.org~ file is my outline for what I plan to teach and the order I plan to go about it. If you are not in the course and stumble across this site, I would love to hear any feedback you have about the structure, missing componets, or suggestions for inclusion. Many of the other files are their to suppor the above, and also to give students practice using version control. 
+
+  Basically, if you are not a student in the course, or maybe someone teaching computer skills to those without a CS background this repo won't be of use to you. 
