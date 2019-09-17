@@ -247,7 +247,7 @@
      5. Now if I use a different computer I can push and pull (to be discussed) from this github site and keep everything synced together.
 **** Demo the Course Git Site
      I am keeping back-ups of my notes for this course on github. You can get everything I create by cloning this repository.
-     1. Go to [[Course Repo on Github][https://github.com/brittAnderson/psych363]]
+     1. Go to [[https://github.com/brittAnderson/psych363][Course Repo on Github]]
      2. Use that url to clone a copy to your laptop (or to fork a version to your github account). Occassionally ~pull~ in any changes or updates.
      3. You will probably find it easier to skip the fork step for any repository that you are just going to use, but not change. 
 **** Magit
