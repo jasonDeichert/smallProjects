@@ -333,7 +333,7 @@
      6. Import your file with you function.
      7. Use your function.
      8. Take a screenshot of your terminal session showing the above session.
-     9. Submit that for your homework *along
+     9. Submit that for your homework *along with your lastname.py file*.
 ** Session 4 Python 
 *** Types
     - Integers :: 1, 2, ...
