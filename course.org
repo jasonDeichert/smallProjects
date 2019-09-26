@@ -1349,6 +1349,12 @@
 ** Interesting Programs
    As part of their exercises, students locate an interesting program from the Xubuntu software collection. This is a list of the different programs students found and reported on. 
 *** Programs
+**** Caprine
+***** Program Description
+   Caprine is an unofficial Facebook Messenger app for linux.
+***** Review
+   I like Caprine because I use Facebook Messenger very often on my Windows/MacOS desktop.
+   Despite being an unofficial app, Caprine looks, feels, and performs perfectly like the official Windows/MacOS desktop app.
 *** Example:
 **** Discord 
 ***** Program Description
