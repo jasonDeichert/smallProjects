@@ -1283,7 +1283,7 @@
    Presentation. Should be able to produce an html 5 slide show of some of the motivation/method/data with graphics.
 
    Can also work on final report and technical questions. The final report will have a later due date. 
-* Other
+ * Other
 ** Instructions for Burning Xubuntu to USB
    The following instructions were cultivated from the following three webpages and represent a blend of their techniques:
    - https://forums.linuxmint.com/viewtopic.php?f=42&t=287353#p1590473
@@ -1350,11 +1350,13 @@
    As part of their exercises, students locate an interesting program from the Xubuntu software collection. This is a list of the different programs students found and reported on. 
 *** Programs
 *** Example:
-**** Discord 
+**** Amoebax
 ***** Program Description
-   A program that was originally developed for the purposes of playing games online with friends, Discord is now used as an alternative to Skype, primarily due to its multi-purpose functionality. It allows for easy collaboration through screensharing, voice, text and video-chat and is entirely free. It can be used as a social hub as well as it runs continually and can be moderated, and is not a singular call.
+This is a game similar to tetris.
+  A program that was originally developed for the purposes of playing games online with friends, Discord is now used as an alternative to Skype, primarily due to its multi-purpose functionality. It allows for easy collaboration through screensharing, voice, text and video-chat and is entirely free. It can be used as a social hub as well as it runs continually and can be moderated, and is not a singular call.
 ***** Review
-   Functions almost identically to how it does on Windows. It looks like the Ubuntu compatible version was actually created by Discord themselves and not by a third party developer. I would definetely recommend it to others as I feel it's vastly superior to Skype (which is honestly only used in highly professional settings these days). Can run small communities (clubs, class discussions, etc.) and can be used for collaboration in all sorts of formats. I chose it because it is something I personally use frequently to keep in touch with friends (especially helpful for very large groups).
+      I downloaded this game because I thought it would be a fun and interesting one. After playing this game, it seems like it's very similar to Tetris, but uses different characters. I would recommend this game to those who like Tetris.  
+Functions almost identically to how it does on Windows. It looks like the Ubuntu compatible version was actually created by Discord themselves and not by a third party developer. I would definetely recommend it to others as I feel it's vastly superior to Skype (which is honestly only used in highly professional settings these days). Can run small communities (clubs, class discussions, etc.) and can be used for collaboration in all sorts of formats. I chose it because it is something I personally use frequently to keep in touch with friends (especially helpful for very large groups).
 
 
 
