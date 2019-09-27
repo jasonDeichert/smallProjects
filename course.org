@@ -1366,3 +1366,8 @@
       Snake4 is a basic video game where the player controls a line resembling a snake which is constantly moving and grows in length as it collects food. The main goal is to make the snake as large as possible and the game will be over once you reach the maximum limit. Snake4 is a classic game that is entertaining and relatively easy to play. I downloaded this program so that I can distract myself if Xubuntu gives me less needed anxiety and distress. Stricly not to be used in lectures.
 ***** Review:
       Snake4 is a nostalgic game which many of us has encountered as our default game application before the smart phone era. The application provided a simple, quick and enjoyable leisure time activity. I still enjoy this program because it reminds me of the simplier times. If you also want to feel a little bit of nostalgia I definetly recommend downloading this entertaining game.
+**** Bastard Tetris
+***** Short Description
+This is text based program that is used to play Tetris, the famous game of blocks.
+***** Review
+          I liked it because, well it is fun. And it is a simplistic game. Just like this is a simple explanation of a game.
