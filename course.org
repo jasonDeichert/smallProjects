@@ -1349,6 +1349,16 @@
 ** Interesting Programs
    As part of their exercises, students locate an interesting program from the Xubuntu software collection. This is a list of the different programs students found and reported on.
 *** Programs
+**** Caprine
+***** Program Description
+      Caprine is an unofficial Facebook Messenger app for linux.
+***** Review
+      I like Caprine because I use Facebook Messenger very often on my Windows/MacOS desktop.
+
+      Despite being an unofficial app, Caprine looks, feels, and performs perfectly like the official Windows/MacOS desktop app.
+**** Discord 
+***** Prograc Description
+      I added this change so I had something to submit.
 **** Amoebax
 ***** Program Description
 This is a game similar to tetris.
@@ -1367,7 +1377,8 @@ Functions almost identically to how it does on Windows. It looks like the Ubuntu
 ***** Program Description
 	This is a small game
 ***** Review
-	I liked it**** Discord 
+	I liked it
+**** Discord 
 ***** Program Description
       A program that was originally developed for the purposes of playing games online with friends, Discord is now used as an alternative to Skype, primarily due to its multi-purpose functionality. It allows for easy collaboration through screensharing, voice, text and video-chat and is entirely free. It can be used as a social hub as well as it runs continually and can be moderated, and is not a singular call.
 ***** Review
