@@ -1283,7 +1283,7 @@
    Presentation. Should be able to produce an html 5 slide show of some of the motivation/method/data with graphics.
 
    Can also work on final report and technical questions. The final report will have a later due date. 
-* Other
+ * Other
 ** Instructions for Burning Xubuntu to USB
    The following instructions were cultivated from the following three webpages and represent a blend of their techniques:
    - https://forums.linuxmint.com/viewtopic.php?f=42&t=287353#p1590473
@@ -1347,7 +1347,7 @@
     29. Need to exit chroot and then umount all the mounted directories. You do this by ~umount~ in order all the things you ~mount~ ed before and in the opposite order. Especially your /mnt/boot/efi which you do not want to corrupt after all this.
     30. Then you should be able to boot your system on a uefi computer
 ** Interesting Programs
-   As part of their exercises, students locate an interesting program from the Xubuntu software collection. This is a list of the different programs students found and reported on. 
+   As part of their exercises, students locate an interesting program from the Xubuntu software collection. This is a list of the different programs students found and reported on.
 *** Programs
 **** Caprine
 ***** Program Description
@@ -1359,6 +1359,27 @@
 **** Discord 
 ***** Prograc Description
       I added this change so I had something to submit.
+**** Amoebax
+***** Program Description
+This is a game similar to tetris.
+  A program that was originally developed for the purposes of playing games online with friends, Discord is now used as an alternative to Skype, primarily due to its multi-purpose functionality. It allows for easy collaboration through screensharing, voice, text and video-chat and is entirely free. It can be used as a social hub as well as it runs continually and can be moderated, and is not a singular call.
+***** Review
+      I downloaded this game because I thought it would be a fun and interesting one. After playing this game, it seems like it's very similar to Tetris, but uses different characters. I would recommend this game to those who like Tetris.  
+Functions almost identically to how it does on Windows. It looks like the Ubuntu compatible version was actually created by Discord themselves and not by a third party developer. I would definetely recommend it to others as I feel it's vastly superior to Skype (which is honestly only used in highly professional settings these days). Can run small communities (clubs, class discussions, etc.) and can be used for collaboration in all sorts of formats. I chose it because it is something I personally use frequently to keep in touch with friends (especially helpful for very large groups).
+**** Caprine
+***** Program Description
+      Caprine is an unofficial Facebook Messenger app for linux.
+***** Review
+   Functions almost identically to how it does on Windows. It looks like the Ubuntu compatible version was actually created by Discord themselves and not by a third party developer. I would definetely recommend it to others as I feel it's vastly superior to Skype (which is honestly only used in highly professional settings these days). Can run small communities (clubs, class discussions, etc.) and can be used for collaboration in all sorts of formats. I chose it because it is something I personally use frequently to keep in touch with friends (especially helpful for very large groups).
+      I like Caprine because I use Facebook Messenger very often on my Windows/MacOS desktop.
+      Despite being an unofficial app, Caprine looks, feels, and performs perfectly like the official Windows/MacOS desktop app.
+**** Bastard Tetris
+***** Program Description
+	This is a small game
+***** Review
+	I liked it
+**** Discord 
+***** Program Description
       A program that was originally developed for the purposes of playing games online with friends, Discord is now used as an alternative to Skype, primarily due to its multi-purpose functionality. It allows for easy collaboration through screensharing, voice, text and video-chat and is entirely free. It can be used as a social hub as well as it runs continually and can be moderated, and is not a singular call.
 ***** Review
       Functions almost identically to how it does on Windows. It looks like the Ubuntu compatible version was actually created by Discord themselves and not by a third party developer. I would definetely recommend it to others as I feel it's vastly superior to Skype (which is honestly only used in highly professional settings these days). Can run small communities (clubs, class discussions, etc.) and can be used for collaboration in all sorts of formats. I chose it because it is something I personally use frequently to keep in touch with friends (especially helpful for very large groups).
@@ -1367,3 +1388,23 @@
       Snake4 is a basic video game where the player controls a line resembling a snake which is constantly moving and grows in length as it collects food. The main goal is to make the snake as large as possible and the game will be over once you reach the maximum limit. Snake4 is a classic game that is entertaining and relatively easy to play. I downloaded this program so that I can distract myself if Xubuntu gives me less needed anxiety and distress. Stricly not to be used in lectures.
 ***** Review:
       Snake4 is a nostalgic game which many of us has encountered as our default game application before the smart phone era. The application provided a simple, quick and enjoyable leisure time activity. I still enjoy this program because it reminds me of the simplier times. If you also want to feel a little bit of nostalgia I definetly recommend downloading this entertaining game.
+**** Gparted and Disks...
+***** Description
+Gparted is a package for formatting USB drives. Disks allows them to be mounted.
+***** Review
+These packages came in handy for reformatting the USB drives when it became necessary. Either due to my experimenting gone wrong, or when they needed to be formatted as fat32 and partitioned so that Xubuntu could be installed on them.
+**** Chromium
+***** Program Description
+      Chromium is a web browser that is the counterpart of Google Chrome on Linux system.
+***** Review
+      Chromium is pretty much identical to Chrome. You can log in to your google account and manage bookmarks, histories, and settings. Optional extension programs within the browser are compatible to the environment as well.
+**** Bastard Tetris
+***** Short Description
+This is text based program that is used to play Tetris, the famous game of blocks.
+***** Review
+          I liked it because, well it is fun. And it is a simplistic game. Just like this is a simple explanation of a game.
+**** Tasque
+***** Description: 
+       An application that creates and organizes to-do lists 
+***** Review:
+        It is an average reminders application that has the standard features such as adding additional notes to reminders, the ability to categorize them, etc. Overall, I would stick to your standard phone reminders application due to the ease of accessing it.
