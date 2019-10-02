@@ -1357,4 +1357,9 @@
    Functions almost identically to how it does on Windows. It looks like the Ubuntu compatible version was actually created by Discord themselves and not by a third party developer. I would definetely recommend it to others as I feel it's vastly superior to Skype (which is honestly only used in highly professional settings these days). Can run small communities (clubs, class discussions, etc.) and can be used for collaboration in all sorts of formats. I chose it because it is something I personally use frequently to keep in touch with friends (especially helpful for very large groups).
 
 
+**** GIMP
+***** Program Description
+ GIMP is a photo editing software similar to photoshop.
+***** Review
+I like GIMP because I want to learn photo editing skills and Photoshop is too expensive. 
 
