@@ -1350,7 +1350,7 @@
    As part of their exercises, students locate an interesting program from the Xubuntu software collection. This is a list of the different programs students found and reported on. 
 *** Programs
 *** Example:
-**** Discord 
+**** Android Studio 
 ***** Program Description
 Android Studio is an IDE (Integrated Development Environment) for building your own Android apps.
 It automatically creates the file structure for a number of useful basic App templates, has a useful GUI, and supports virtualization of a number of android devices (for example, simulating a Google Pixel3 XL).
