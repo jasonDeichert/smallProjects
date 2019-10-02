@@ -1,0 +1,13 @@
+ii
+
+#+Attr_HTML: :textarea t :width 40
+#+Begin_example
+* Package Name
+  Android Studio
+** Short Description
+Android Studio is an IDE (Integrated Development Environment) for building your own Android apps.
+It automatically creates the file structure for a number of useful basic App templates, has a useful GUI, and supports virtualization of a number of android devices (for example, simulating a Google Pixel3 XL).
+** Review
+   I'm just getting started with it and the Kotlin language it uses, but so far it is great. My plan for this is to build an app that encompasses a number of basic phone functions while excluding distracting factors like social media, email, etc. 
+#+END_Example
+** 
