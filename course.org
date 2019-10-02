@@ -576,15 +576,17 @@
  : 5
 
 **** Class Exercise with Functions :homework:
-     You will be required to turn this in, but you can get started now. 
-     1. Look up how to get user input from python on the command line.
-     2. Write a script that I will run on the command line thus:
-        ~python functionHW.py~
-     3. Your script should ask me to enter a word.
-     4. It will then print out the word.
-     5. Print out the sorted version one character at a time.
-     6. Ask me if I want to do it again (y/n). If 'y', repeat, and continue repeating until I answer 'n'.
-*** Libraries :classdiscussion:
+
+***** Hangman Game
+      You will be required to turn this in, but you can get started now. 
+      1. Look up how to get user input from python on the command line.
+      2. Write a script that implements elements of the hangman game. 
+      3. Your script should ask for guesses for letters in the word.
+      4. Give an update on the letters guessed and the missing spaces
+      5. Track that guesses have not exceeded max
+      6. Report if one or lost.
+      7. I will give some hints and examples in class to start us off. 
+*** Libraries                                               :classdiscussion:
     Lots of people use python. If you can think that someone ought to have done ... they probably have. Use libraries whenever you can, because ... discussion points. 
 **** What are some popular libraries? :classactivity:homework:
      [[https://pythontips.com/2013/07/30/20-python-libraries-you-cant-live-without/][Here]] are 20 recommended ones.
