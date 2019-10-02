@@ -192,13 +192,20 @@
 
         You can learn more by reading the [[info:emacs#Init%20File][info file]].
 
-        A minimal init.el to get started
-        
+        A minimal init.el to get started. And make sure your emacs package is update to the latest version. 
+
         #+begin_src elisp :eval never :exports code
-        (require package)
+        (require 'package)
         (package-initialize)
         (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages") t)
         #+end_src
+
+        If you get errors about gnupg and signing signatures.
+
+        You can try this code to make sure that gnupg has the directories established that it needs and has "signed" the correct security key for emacs packages. 
+
+        ~gpg --homedir /home/<NAMEOFYOURHOMEDIRHERE>/.emacs.d/elpa/gnupg  --keyserver keyserver.ubuntu.com --recv-keys 066DAFCB81E42C40~
+
 
      6. Program your editor
         1. Turn off the tool bar?
