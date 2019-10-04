@@ -1366,3 +1366,14 @@
       Snake4 is a basic video game where the player controls a line resembling a snake which is constantly moving and grows in length as it collects food. The main goal is to make the snake as large as possible and the game will be over once you reach the maximum limit. Snake4 is a classic game that is entertaining and relatively easy to play. I downloaded this program so that I can distract myself if Xubuntu gives me less needed anxiety and distress. Stricly not to be used in lectures.
 ***** Review:
       Snake4 is a nostalgic game which many of us has encountered as our default game application before the smart phone era. The application provided a simple, quick and enjoyable leisure time activity. I still enjoy this program because it reminds me of the simplier times. If you also want to feel a little bit of nostalgia I definetly recommend downloading this entertaining game.
+#+Attr_HTML: :textarea t :width 40
+#+Begin_Example
+* Package Name
+Polar
+** Short Description
+Polar is a package for organizing and tracking documents, including ^M
+pdfs and webpages. You can tag, highlight and share your documents.
+** Review
+I think Polar can be helpful for literature reviews, when you need to ^M
+keep track of lots of online and downloaded articles.
+#+END_Example
