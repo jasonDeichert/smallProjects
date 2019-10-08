@@ -1,14 +1,22 @@
-def internetRead(internetUrl): #takes an url, returns a text block (50,000 bytes) of the html
+# takes an url, returns a text block (50,000 bytes) of the html
+
+
+def internetRead(internetUrl):
     from urllib import request
     internetFile = request.urlopen(internetUrl)
     file = internetFile.read(50000)
     return (file)
 
-def splitParse(toParse): #takes a file, splits it into a list of words, removes "words" that include non-letter characters, returns the list in all lowercase
+# takes a file, splits it into a list of words,
+# removes "words" that include non-letter characters,
+# returns the list in all lowercase
+
+
+def splitParse(toParse):
     split = toParse.split()
     parsed = []
     for words in split:
-        if words.isalpha() == True and len(words) >= 4:
+        if words.isalpha() and len(words) >= 4:
             lwords = words.lower()
             parsed.append(lwords)
     i = 0
