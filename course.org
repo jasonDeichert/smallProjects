@@ -15,7 +15,7 @@
 #+latex_class_options:
 #+latex_header: \usepackage{times}
 #+latex_header_extra:
-#+description:
+#+description: Add description of the program here! And Review section
 #+keywords:
 #+subtitle:
 #+latex_compiler: pdflatex
@@ -192,13 +192,20 @@
 
         You can learn more by reading the [[info:emacs#Init%20File][info file]].
 
-        A minimal init.el to get started
-        
+        A minimal init.el to get started. And make sure your emacs package is update to the latest version. 
+
         #+begin_src elisp :eval never :exports code
-        (require package)
+        (require 'package)
         (package-initialize)
         (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages") t)
         #+end_src
+
+        If you get errors about gnupg and signing signatures.
+
+        You can try this code to make sure that gnupg has the directories established that it needs and has "signed" the correct security key for emacs packages. 
+
+        ~gpg --homedir /home/<NAMEOFYOURHOMEDIRHERE>/.emacs.d/elpa/gnupg  --keyserver keyserver.ubuntu.com --recv-keys 066DAFCB81E42C40~
+
 
      6. Program your editor
         1. Turn off the tool bar?
@@ -569,15 +576,17 @@
  : 5
 
 **** Class Exercise with Functions :homework:
-     You will be required to turn this in, but you can get started now. 
-     1. Look up how to get user input from python on the command line.
-     2. Write a script that I will run on the command line thus:
-        ~python functionHW.py~
-     3. Your script should ask me to enter a word.
-     4. It will then print out the word.
-     5. Print out the sorted version one character at a time.
-     6. Ask me if I want to do it again (y/n). If 'y', repeat, and continue repeating until I answer 'n'.
-*** Libraries :classdiscussion:
+
+***** Hangman Game
+      You will be required to turn this in, but you can get started now. 
+      1. Look up how to get user input from python on the command line.
+      2. Write a script that implements elements of the hangman game. 
+      3. Your script should ask for guesses for letters in the word.
+      4. Give an update on the letters guessed and the missing spaces
+      5. Track that guesses have not exceeded max
+      6. Report if one or lost.
+      7. I will give some hints and examples in class to start us off. 
+*** Libraries                                               :classdiscussion:
     Lots of people use python. If you can think that someone ought to have done ... they probably have. Use libraries whenever you can, because ... discussion points. 
 **** What are some popular libraries? :classactivity:homework:
      [[https://pythontips.com/2013/07/30/20-python-libraries-you-cant-live-without/][Here]] are 20 recommended ones.
@@ -1349,6 +1358,12 @@
 ** Interesting Programs
    As part of their exercises, students locate an interesting program from the Xubuntu software collection. This is a list of the different programs students found and reported on.
 *** Programs
+**** Android Studio 
+***** Program Description
+Android Studio is an IDE (Integrated Development Environment) for building your own Android apps.
+It automatically creates the file structure for a number of useful basic App templates, has a useful GUI, and supports virtualization of a number of android devices (for example, simulating a Google Pixel3 XL).
+***** Review
+I'm just getting started with it and the Kotlin language it uses, but so far it is great. My plan for this is to build an app that encompasses a number of basic phone functions while excluding distracting factors like social media, email, etc. 
 **** Caprine
 ***** Program Description
       Caprine is an unofficial Facebook Messenger app for linux.
@@ -1373,7 +1388,11 @@ Functions almost identically to how it does on Windows. It looks like the Ubuntu
    Functions almost identically to how it does on Windows. It looks like the Ubuntu compatible version was actually created by Discord themselves and not by a third party developer. I would definetely recommend it to others as I feel it's vastly superior to Skype (which is honestly only used in highly professional settings these days). Can run small communities (clubs, class discussions, etc.) and can be used for collaboration in all sorts of formats. I chose it because it is something I personally use frequently to keep in touch with friends (especially helpful for very large groups).
       I like Caprine because I use Facebook Messenger very often on my Windows/MacOS desktop.
       Despite being an unofficial app, Caprine looks, feels, and performs perfectly like the official Windows/MacOS desktop app.
-**** Bastard Tetris
+**** GIMP
+***** Program Description
+ GIMP is a photo editing software similar to photoshop.
+***** Review
+I like GIMP because I want to learn photo editing skills and Photoshop is too expensive. **** Bastard Tetris
 ***** Program Description
 	This is a small game
 ***** Review
@@ -1388,6 +1407,13 @@ Functions almost identically to how it does on Windows. It looks like the Ubuntu
       Snake4 is a basic video game where the player controls a line resembling a snake which is constantly moving and grows in length as it collects food. The main goal is to make the snake as large as possible and the game will be over once you reach the maximum limit. Snake4 is a classic game that is entertaining and relatively easy to play. I downloaded this program so that I can distract myself if Xubuntu gives me less needed anxiety and distress. Stricly not to be used in lectures.
 ***** Review:
       Snake4 is a nostalgic game which many of us has encountered as our default game application before the smart phone era. The application provided a simple, quick and enjoyable leisure time activity. I still enjoy this program because it reminds me of the simplier times. If you also want to feel a little bit of nostalgia I definetly recommend downloading this entertaining game.
+**** Polar
+***** Short Description
+Polar is a package for organizing and tracking documents, including ^M
+pdfs and webpages. You can tag, highlight and share your documents.
+***** Review
+I think Polar can be helpful for literature reviews, when you need to ^M
+keep track of lots of online and downloaded articles.
 **** Gparted and Disks...
 ***** Description
 Gparted is a package for formatting USB drives. Disks allows them to be mounted.
@@ -1409,6 +1435,11 @@ This is text based program that is used to play Tetris, the famous game of block
 ***** Review:
         It is an average reminders application that has the standard features such as adding additional notes to reminders, the ability to categorize them, etc. Overall, I would stick to your standard phone reminders application due to the ease of accessing it.
   Five in a row board game.
-** Bovo Review
+**** Bovo Review
           I liked it because it looked nice and simple to play. 
 I also made sure it was small in its size that does not take up 4GB to save in my usb.
+**** gbrain
+***** Description
+       A game that helps you train your brain
+***** Review
+       I like this game as it is challenging to all ages
