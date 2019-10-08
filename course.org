@@ -693,6 +693,7 @@
        - type ~quit()~ to exit.
     2. Test for R in Emacs
        - ~M-x R~
+       - if this doesn't work install ~ESS~ for emacs (Emacs Speaks Statistics)
 *** Getting R
     How might you do it?
     ~sudo apt install r-base-core~
