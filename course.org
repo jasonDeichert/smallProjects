@@ -194,10 +194,21 @@
 
         A minimal init.el to get started. And make sure your emacs package is update to the latest version. 
 
+	This can be a bit tricky to get started because you will have to first install =use-package= manually via ~package-list-packages~ where you mark it with an =I= and the =x=. Then close and restart emacs.  From here on out you can add the packages to your init where you customize them and then they get downloaded as needed. 
+
         #+begin_src elisp :eval never :exports code
-        (require 'package)
-        (package-initialize)
-        (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages") t)
+(require 'package)
+(add-to-list 'package-archives '("melpa" ."http://melpa.org/packages/") t)
+(package-initialize)
+
+
+(use-package elpy
+   :ensure t
+   :init (elpy-enable))
+
+(use-package ess
+  :ensure t
+  )
         #+end_src
 
         If you get errors about gnupg and signing signatures.
@@ -682,6 +693,11 @@
        - type ~quit()~ to exit.
     2. Test for R in Emacs
        - ~M-x R~
+*** Getting R
+    How might you do it?
+    ~sudo apt install r-base-core~
+
+    This is a pretty large download with a lot of dependencies. It make take a while. 
 *** R Coding Basics - compare
 *** Types
     R has many of the same types, but also makes much greater use of lists where there are names and elements (rather like a python dictionary). Many built-in statistical functions will return S3 or S4 objects. The point isn't to know what they are, as to know that there are special types in R that have special handling in R.
