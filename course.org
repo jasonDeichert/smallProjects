@@ -86,7 +86,7 @@
 
       When you install software you need to make sure that install it to the usb and not the hard drive on the computer. Also, beware the boot loader. This is the program that helps your computer start and chooses an operating system. If you install it in the wrong place you may not be able to boot your Xubuntu installation or you may need the live disc to boot your non-linux installation. If you go slow and are careful the risk of either of these events is small. 
 
-      Note: Don't choose to small a USB. 8GB will work to install the base system just fine, but when you try to add further software you will fill up the disc quickly and then you will have to start all over. 16GB should work, but 32 GB is a safer choice if you imagine downloading a lot of software to explore. 
+      Note: Don't choose to small a USB. 8GB will work to install the base system just fine, but when you try to add further software you will fill up the disc quickly and then you will have to start all over. 16GB should work, but 32 GB is a safer choice if you imagine downloading a lot of s
       For more detailed instructions go to the section [[*Instructions for Burning Xubuntu to USB][Instructions for Burning Xubuntu to a USB]]
    8. When you think you are done, shut things down. Remove the live USB/CD, but leave the other one in place. Follow the steps you need to to boot your computer from a USB. If you are able to launch Ubuntu (and it might take a few tries to find the right menu entry) then you will see linux start. Enjoy the feeling of immense power.
    9. Boot your computer from the /new/ USB and install *emacs* /from the command line/ again.
@@ -237,7 +237,7 @@
            4. Insert an image
            5. Export as a web page.
            6. What would you need to export a pdf?
-              Try installing ~texlive-latex-recommended~. If that doesn't fix the problem go with ~texlive-full~. This is big.
+              Try installing ~texlive-latex-base texlive-latex-extra~. If that doesn't work, repeat with ~texlive-latex-recommended~. If that doesn't fix the problem go with ~texlive-full~. This is big. Be patient. 
 ** Session 3 Version Control Github and Beginning With Python
 *** Version Control
 **** Git
