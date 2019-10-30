@@ -42,13 +42,14 @@
 * Outline
 ** Session 1 Installing Linux
 *** Instructions for testing the Live CD and installing to USB
-   2. Learn how to boot your computer from a USB. 
+   1. Learn how to boot your computer from a USB. 
       - Mac OSX - start the computer with option key held down
       - Windows - may require going into the bios and enable booting usb (usually some key combo of F2 or F10 during the boot process - look for a very briefly flashed screen); followed by rebooting with a different F Key. Another option is to tell Windows to boot from recovery mode. Find the "advanced" menu of the Windows Start Up menu (look in the "recovery" section of the start-up). Select from "another device". Some devices, like Surfaces, have other key combinations.
       - Other systems: chrome books; ipads; probably won't work.
       - Sometimes it takes a while to figure out which of the options is the Xubuntu option. If one doesn't work, just note what it was and next time try a different one. 
-   3. Run an XUbuntu Live CD
+   2. Run an XUbuntu Live CD (off us USB)
       If problems starting the use without installing option, restart, select install, and then quit from the first screen. That will usually drop you into what you need.
+   3. Make sure to set the screen off and power off power management features to "never". This can hurt you if you are waiting on a download and the computer goes to sleep. It may not wake normally, and it can damage the USB. 
    4. Explore the Live USB
       1. Connect to the wifi.
          1. Click up/down arrow in upper right corner of screen.
@@ -85,6 +86,7 @@
 
       When you install software you need to make sure that install it to the usb and not the hard drive on the computer. Also, beware the boot loader. This is the program that helps your computer start and chooses an operating system. If you install it in the wrong place you may not be able to boot your Xubuntu installation or you may need the live disc to boot your non-linux installation. If you go slow and are careful the risk of either of these events is small. 
 
+      Note: Don't choose to small a USB. 8GB will work to install the base system just fine, but when you try to add further software you will fill up the disc quickly and then you will have to start all over. 16GB should work, but 32 GB is a safer choice if you imagine downloading a lot of software to explore. 
       For more detailed instructions go to the section [[*Instructions for Burning Xubuntu to USB][Instructions for Burning Xubuntu to a USB]]
    8. When you think you are done, shut things down. Remove the live USB/CD, but leave the other one in place. Follow the steps you need to to boot your computer from a USB. If you are able to launch Ubuntu (and it might take a few tries to find the right menu entry) then you will see linux start. Enjoy the feeling of immense power.
    9. Boot your computer from the /new/ USB and install *emacs* /from the command line/ again.
