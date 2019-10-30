@@ -1260,6 +1260,16 @@
         1. The authors of the Psychopy library have written an entire [[https://us.sagepub.com/en-us/nam/building-experiments-in-psychopy/book253480#contents][textbook]] on using python for psychology experiments that includes the online extensions. That is a good resource to pursue things after this course.
         2. On the psychopy website is an [[https://www.psychopy.org/coder/coder.html][introduction]] to using the coder component of psychopy.
         3. Searching online with ~psychopy tutorial~ will get you a variety of hits. Note that you want to emphasize the ~coder~ version. Maybe the ~builder~ will meet your needs, but better to start with the ~coder~ version and use the ~builder~ for efficiency. In many cases it will be harder to build a complex experiment in the ~builder~ than by directly using the ~coder~ version.
+***** Psychopy Demos
+      Purpose: Demonstrate that you have psychopy installed and functioning
+      
+      Navigate to where installed. Look in (via terminal) =cd ~/.lib/python3.6/site-packages/psychopy/demos/coder/stimuli/=
+      
+      ~python3 face_jpg.py~
+
+      Run a few other demos.
+
+      Save one of the demos with a slightly altered name (so you don't overwrite the original). Open it up in your editor and change one tiny thing. Maybe the color of something or the size. Save it. Close. And then run your altered demo. 
 ***** Psychopy Exercise 
       :NeedsTesting:
       This demo still needs testing
@@ -1289,13 +1299,23 @@
       5. Run any of the demo programs you can find in the ~.../psychopy/demo/coder/stimuli/~ directory.
       6. Change something in the demo you are running and see what the effect is.
          Note you may want to save the original file with a new name and hack on the one with a new name. That way it will be easier to go back to the original if you break something.
+***** Simple Tutorials
+      [[https://www.psychopy.org/coder/tutorial1.html][Here]] is the first Psychopy tutorial 
+      
+      See if you can get this to work. 
+
+      Another idea: [[https://www.psychopy.org/coder/tutorial2.html][A formula for JND]]
+
 **** Homework (can start in class)
      1. Provide me with a name of the basic variety or example of the experiment you intend to code (with at least one reference using that task).
      2. Provide a written (not code) outline of what you will need to do to implement the task.
-     3. Provide links to any existing versions of the task that you hope to be able to adapt for your usage. 
+     3. Provide links to any existing versions of the task that you hope to be able to adapt for your usage.
+     4. /Be very basic./ Simple recall. Simple reaction time. Stroop. Picture versus word memory. The goal is to get something minimal working to prove "proof-of-concept"; not to actually have a reliable experiment coded.
 ** Session 9 Report Writing
-   IAMHERE
 *** Writing a simple report
+    We will use emacs. Open it up.
+
+    
 *** Mixing Code and Text for reproducibility
 *** Start the experimental coding here and continue this week, because the next session will be for running the experiments. 
 ** Session 10 Coding the Experiment
