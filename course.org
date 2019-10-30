@@ -83,9 +83,9 @@
       
       **Where you need to be careful**
 
-      When you are picking where to install the system you need to make sure to pick the new USB location. It will probably be /dev/sd<something or other>. If you pick the wrong device you will install it in place of your current operating system. Try running, from a terminal, =ls /dev/sd* = without the usb in place. Then plug in the USB and note the new appearance of the another ~/dev/sd<something>~. 
+      When you install software you need to make sure that install it to the usb and not the hard drive on the computer. Also, beware the boot loader. This is the program that helps your computer start and chooses an operating system. If you install it in the wrong place you may not be able to boot your Xubuntu installation or you may need the live disc to boot your non-linux installation. If you go slow and are careful the risk of either of these events is small. 
 
-      When you pick where to install the /bootloader/ make sure you also pick the USB or you may have trouble booting into your old system the way you are used too. 
+      For more detailed instructions go to the section [[*Instructions for Burning Xubuntu to USB][Instructions for Burning Xubuntu to a USB]]
    8. When you think you are done, shut things down. Remove the live USB/CD, but leave the other one in place. Follow the steps you need to to boot your computer from a USB. If you are able to launch Ubuntu (and it might take a few tries to find the right menu entry) then you will see linux start. Enjoy the feeling of immense power.
    9. Boot your computer from the /new/ USB and install *emacs* /from the command line/ again.
       1. The command line - open up a "terminal". Your terminal will be running a "shell."
