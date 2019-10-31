@@ -1377,3 +1377,7 @@ Functions almost identically to how it does on Windows. It looks like the Ubuntu
        An application that creates and organizes to-do lists 
 ***** Review:
         It is an average reminders application that has the standard features such as adding additional notes to reminders, the ability to categorize them, etc. Overall, I would stick to your standard phone reminders application due to the ease of accessing it.
+
+
+Improvements:
+I recommend starting the course with R rather than python because it is more useful for those getting a psychology degree (I think) as it is more specific to data analysis. I liked how we were introduced to both R and python in this course. 
