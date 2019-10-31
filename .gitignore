@@ -10,3 +10,9 @@ testLatex.synctex
 testRBabel.synctex
 testLatex.tex
 testRBabel.tex
+*.aux
+*.toc
+*.out
+*.blg
+*.bbl
+*.log
