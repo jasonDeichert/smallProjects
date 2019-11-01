@@ -52,14 +52,14 @@
    3. Make sure to set the screen off and power off power management features to "never". This can hurt you if you are waiting on a download and the computer goes to sleep. It may not wake normally, and it can damage the USB. 
    4. Explore the Live USB
       1. Connect to the wifi.
-         1. Click up/down arrow in upper right corner of screen.
+         1. Click up/down arrow in upper right corner of the screen.
          2. Select the correct options (to be demonstrated).
             - Authentication: PEAP
             - Click box no certificate required
             - Use your full watiam address (including the stuff after @ sign usually).
       2. Verify working by opening Firefox Web Browser
          1. Click little icon upper left.
-         2. From dropdown menu select /Web Browser/.
+         2. From the dropdown menu select /Web Browser/.
          3. Go to https://uwaterloo.ca
       3. Explore some of the other programs available in the dropdown menu and under the different headings.
          1. Which program is like Word for Windows?
