@@ -1549,6 +1549,9 @@ keep track of lots of online and downloaded articles.
 ***** Review
        I like this game as it is challenging to all ages
 
+* Improvements:
+I recommend starting the course with R rather than python because it is more useful for those getting a psychology degree (I think) as it is more specific to data analysis. I liked how we were introduced to both R and python in this course. 
+
 * Footnotes
 
 [fn:1] http://ehneilsen.net/notebook/orgExamples/org-examples.html#sec-22-1 
