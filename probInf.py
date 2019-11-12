@@ -1,18 +1,38 @@
 from psychopy import event, core, visual
 import random
 
-#generate "selections" from each bag (without replacement)
+#generate "selections" from each bag (with replacement)
 def selOrder(nRed,nBlue,nSel):
     lsSel = []
     for i in range(nSel):
         rand = random.randint(1,nRed+nBlue)
-        if rand in range(1,nRed):
+        if rand in range(1,nRed+1):
             lsSel.append('R')
-            nRed -= 1
         else:
             lsSel.append('B')
-            nBlue -= 1
     return(lsSel)
+
+#determine bayesian probability of selection after each draw
+def bayesProb(sel, propRs):
+
+    #probability that draws are from predominantly red bag
+    probsR = []
+
+    draws = []
+    i = 0
+    while i < len(sel):
+        draws.append(sel[i])
+        rs = draws.count('R')
+        bs = len(draws) - rs
+        l = (propRs / (1-propRs))**(rs - bs)
+        x = 1/((1/l)+1)
+        probsR.append(x)
+        i += 1
+    return(probsR)
+
+
+
+
 
 #70 red, 30 blue
 sel1 = selOrder(70,30,20)
@@ -114,7 +134,7 @@ while ExpMain.chipsDrawn <= 20:
     keyPress = event.waitKeys(keyList=('a','z','s','x','space'))
     
     if keyPress[0] == 'space':
-        subjectProbs.append(ExpMain.nRec1)
+        subjectProbs.append(ExpMain.nRec1/100)
         ExpMain.chipsDrawn += 1       
     if keyPress[0] == 'a':
         ExpMain.nRec1 += 1
@@ -131,7 +151,11 @@ while ExpMain.chipsDrawn <= 20:
     if ExpMain.chipsDrawn <= 20:
         ExpMain.drawExpMain()
 
+bP = bayesProb(sel1,.7)
 print(subjectProbs)
+print(bP)
+
+
 event.waitKeys(keyList = ('q', 'Esc'))
 
 expWin.close()
