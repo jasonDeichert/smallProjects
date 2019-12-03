@@ -1,0 +1,13 @@
+library(ggplot2)
+data1 <- read.csv(file='/home/jason/smallProjects/probInfData.csv')
+slc = data1$Trial == 1
+trial1data = data1[ which(data1$Trial == 1),]
+t2 = trial1data[c(3,4:23)]
+ytrial1data = colMeans(t2)
+x1 = c(1,2:21)
+lx = length(x1)
+ly =length(ytrial1data)
+ld = length(trial1data)
+bP = c(0.7, 0.8448275862068966, 0.927027027027027, 0.8448275862068966, 0.7, 0.8448275862068966, 0.927027027027027, 0.8448275862068966, 0.927027027027027, 0.8448275862068966, 0.927027027027027, 0.967365028203062, 0.927027027027027, 0.8448275862068966, 0.927027027027027, 0.967365028203062, 0.9857478005865102, 0.967365028203062, 0.9857478005865102, 0.9938417611380492)
+plot(x1,ytrial1data,'trial number','assigned probability')
+plot(x1, bP)
